@@ -1,17 +1,4 @@
 import { ResolveOptions } from 'webpack';
-<<<<<<< HEAD
-
-export function buildResolvers(): ResolveOptions
-{
-  const extensions =
-    [
-      '.tsx',
-      '.ts',
-      '.js',
-    ];
-
-  return { extensions };
-=======
 import { BuildOptions } from './types/config';
 
 export function buildResolvers(options: BuildOptions): ResolveOptions
@@ -23,6 +10,5 @@ export function buildResolvers(options: BuildOptions): ResolveOptions
     mainFiles: ['index'], //файлы эспорта из модулей
     alias: {},
   };
->>>>>>> createBrowserRouter
 
 }

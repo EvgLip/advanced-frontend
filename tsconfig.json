@@ -17,6 +17,12 @@
     // без флага esModuleInterop результат console.log(Moment)=> undefined
     // c флагом результат - console.log(Moment) => [object Object]
     "baseUrl": ".",   // для абсолютного импорта
+<<<<<<< HEAD
+=======
+    "paths":{
+      "*": ["./src/*"],
+    },
+>>>>>>> createBrowserRouter
   },
   "ts-node": {
     "compilerOptions": {

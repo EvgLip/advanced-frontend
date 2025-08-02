@@ -24,7 +24,11 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     module: {
       rules: buildLoaders(options),
     },
+<<<<<<< HEAD
     resolve: buildResolvers(),
+=======
+    resolve: buildResolvers(options),
+>>>>>>> createBrowserRouter
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };

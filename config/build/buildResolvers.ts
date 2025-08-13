@@ -5,10 +5,21 @@ export function buildResolvers(options: BuildOptions): ResolveOptions
 {
   return {
     extensions: ['.tsx', '.ts', '.js',],
-    preferAbsolute: true, //?? если алиас {}
-    modules: [options.paths.src, 'node_modules'], //?? если алиас {}
+    preferAbsolute: true,
+    modules: [options.paths.src, 'node_modules'],
     mainFiles: ['index'], //файлы эспорта из модулей
-    alias: {}, //можно указать '@': paths.src
+    alias: {
+      '@*': `${options.paths.src}/*`,
+    }
   };
 
 }
+
+
+// return {
+//   extensions: ['.tsx', '.ts', '.js',],
+//   preferAbsolute: true, //?? если алиас {}
+//   modules: [options.paths.src, 'node_modules'], //?? если алиас {}
+//   mainFiles: ['index'], //файлы эспорта из модулей
+//   alias: {}, //можно указать '@': paths.src
+// };

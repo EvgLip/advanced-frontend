@@ -2,19 +2,17 @@ import { RouterProvider } from 'react-router-dom';
 import { AppRouter } from '@app/providers/router';
 
 import { classNames } from '@shared/lib/classNames/classNames';
-import { useTheme } from '@app/providers/ThemeProviders';
 
 import './styles/index.scss';
+import { useTheme } from './providers/ThemeProviders';
 
 
 export default function App()
 {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('app', { hovered: true, selected: false }, [theme])}>
-      <button onClick={toggleTheme}>Тема</button>
-
       <RouterProvider router={AppRouter} />
     </div>
   );

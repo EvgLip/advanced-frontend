@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+
+import { Navbar } from '@widgets/navbar';
+import { useTheme } from '@app/providers/ThemeProviders';
 
 export default function RootLayout()
 {
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <main>
-      <Link to='/'>Главная</Link>
-      <Link to='/about'>О сайте</Link>
+      <Navbar />
+      <button onClick={toggleTheme}>Тема</button>
       <Outlet />
     </main>
   );

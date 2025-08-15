@@ -1,6 +1,11 @@
 import { createContext } from 'react';
 
-export type Theme = 'light' | 'dark';
+export const ThemeList =
+  {
+    LIGHT: 'light',
+    DARK: 'dark',
+  } as const;
+export type Theme = (typeof ThemeList)[keyof typeof ThemeList];
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
@@ -12,5 +17,5 @@ export interface ThemeContextProps
 
 export const ThemeContext = createContext<ThemeContextProps>(
   {
-    theme: 'light',
+    theme: ThemeList.LIGHT,
   });

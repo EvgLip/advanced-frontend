@@ -1,6 +1,7 @@
 import { classNames } from '@shared/lib/classNames/classNames';
 import * as classes from './Sidebar.module.scss';
 import { useState } from 'react';
+import { ThemeSwitcher } from '@widgets/theme-switcher';
 
 interface SidebarProps
 {
@@ -19,6 +20,10 @@ export default function Sidebar(props: SidebarProps)
       <button onClick={onToggle}>
         Скрыть
       </button>
+      <div className={classes.switchers}>
+        <ThemeSwitcher />
+        {/* <LangSwitcher /> */}
+      </div>
     </aside>
   );
 }

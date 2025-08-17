@@ -1,9 +1,9 @@
-@use '../../../app/styles/index.scss';
+// @use '../../../app/styles/index.scss';
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   gap:3rem;
   width: 100%;
   height: var(--navbar-height);

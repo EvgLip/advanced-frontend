@@ -12,7 +12,7 @@ type ButtonType = (typeof ButtonTypeList)[keyof typeof ButtonTypeList];
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 {
-  className: string;
+  className?: string;
   appearance?: ButtonType;
   children: ReactNode;
 }

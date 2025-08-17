@@ -19,3 +19,19 @@ html {
   background-color: var(--bg-color);
   color: var(--primary-color); 
 }
+
+.page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.navbar {
+  grid-column: 1/-1;
+  align-content: center;
+}
+
+.main {
+  grid-column: 2/-1;
+  height: 100%;
+}

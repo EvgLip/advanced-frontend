@@ -1,14 +1,18 @@
 import { Outlet } from 'react-router-dom';
 
 import { Navbar } from '@widgets/navbar';
+import { Sidebar } from '@widgets/sidebar';
 
 export default function RootLayout()
 {
 
   return (
-    <main>
+    <>
       <Navbar />
-      <Outlet />
-    </main>
+      <Sidebar />
+      <main className='main'>
+        <Outlet />
+      </main>
+    </>
   );
 }

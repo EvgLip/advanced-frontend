@@ -1,0 +1,14 @@
+@use '../../../../app/styles/index.scss';
+
+.sidebar {
+  grid-column: 1/1;
+  height: calc(100vh - var(--navbar-height));
+  width: 30rem;
+  position: relative;
+
+  background-color: var(--inverted-bg-color);
+}
+
+.collapsed {
+  width: 0;
+}

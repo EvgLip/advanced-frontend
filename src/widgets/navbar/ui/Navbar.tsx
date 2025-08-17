@@ -13,7 +13,7 @@ export function Navbar({ className }: NavbarProps)
 {
 
   return (
-    <nav className={classNames(styles.navbar, {}, [className])}>
+    <nav className={classNames(styles.navbar, {}, ['navbar', className])}>
       <ThemeSwitcher />
       <div className={styles.links}>
         <AppLink to='/'>Главная</AppLink>

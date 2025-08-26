@@ -1,14 +1,18 @@
-import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+
+import { Navbar } from '@widgets/navbar';
+import { Sidebar } from '@widgets/sidebar';
 
 export default function RootLayout()
 {
 
   return (
-    <main>
-      <Link to='/'>Главная</Link>
-      <Link to='/about'>О сайте</Link>
-      <Outlet />
-    </main>
+    <>
+      <Navbar />
+      <Sidebar />
+      <main className='main'>
+        <Outlet />
+      </main>
+    </>
   );
 }

@@ -6,6 +6,22 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[]
 {
   const { isDev } = options;
 
+  const svgLoader =
+  {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
+  const fileLoader =
+  {
+    test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  };
+
   const cssLoader =
   {
     test: /\.s[ac]ss$/i,
@@ -21,7 +37,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[]
             auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:5]'
-              : ' [hash: base64: 8]',
+              : '[hash:base64: 8]',
           }
         }
       },
@@ -41,5 +57,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[]
   return [
     tsLoader,
     cssLoader,
+    svgLoader,
+    fileLoader,
   ];
 }

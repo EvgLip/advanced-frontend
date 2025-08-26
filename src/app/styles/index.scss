@@ -1,20 +1,38 @@
-@use './reset.scss';
-@use './variables/globall.scss';
-@use './themes/light.scss';
-@use './themes/dark.scss';
+@use './reset';
+@use './variables/globall';
+@use './themes/light';
+@use './themes/dark';
 
 
-/* 16px - 1 rem*/
-/* 10px - 0.625 rem*/
+/* 16px - 1 rem */
+
+/* 10px - 0.625 rem */
+
+/* теперь 10px = 0.1rem */
 html {
   font-size: 62.5%;
 }
 
 .app {
   min-height: 100vh;
-
   font: var(--font-m);
-
   background-color: var(--bg-color);
   color: var(--primary-color); 
+}
+
+.page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.navbar {
+  grid-column: 1/-1;
+  align-content: center;
+}
+
+.main {
+  grid-column: 2/-1;
+  height: 100%;
+  padding: 2rem;
 }

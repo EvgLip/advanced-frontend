@@ -1,0 +1,20 @@
+// @use '../../../app/styles/index.scss';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap:3rem;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 0 3rem;
+  background: var(--inverted-bg-color);
+}
+
+.links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap:3rem;
+  height: 100%;
+}

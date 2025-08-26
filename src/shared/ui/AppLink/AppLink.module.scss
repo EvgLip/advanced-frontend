@@ -1,13 +1,12 @@
 // @use '../../../app/styles/index.scss';
 
+.app-link, 
 .app-link:link,
-.app-link:visited,
-.app-link {
+.app-link:visited {
   display: flex;
   align-items: center;
   height: 100%;
   padding: 0 1rem;
-  
   text-decoration: none;
   color: var(--bg-color);
 }

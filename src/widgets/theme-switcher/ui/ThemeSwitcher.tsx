@@ -19,7 +19,7 @@ export default function ThemeSwitcher(props: ThemeSwitcherProps)
 
   return (
     <Button
-      className={classNames(classes['theme-switcher'], {}, [className])}
+      className={classNames('', {}, [className])}
       appearance={ButtonType.CLEAR}
       onClick={toggleTheme}
     >

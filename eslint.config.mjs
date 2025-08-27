@@ -5,6 +5,7 @@ import pluginReact from 'eslint-plugin-react';
 import pluginHooks from 'eslint-plugin-react-hooks';
 // import pluginRefresh from 'eslint-plugin-react-refresh';
 // import pluginImport from 'eslint-plugin-import';
+import i18next from 'eslint-plugin-i18next';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -25,6 +26,7 @@ export default [
       globals: globals.browser,
     },
   },
+  i18next.configs['flat/recommended'],
   pluginJs.configs.recommended,
   // pluginRefresh.configs.recommended,
   pluginReact.configs.flat.recommended,

@@ -2,6 +2,7 @@ import { classNames } from '@shared/lib/classNames/classNames';
 
 import * as styles from './Navbar.module.scss';
 import { AppLink } from '@shared/ui';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps
 {
@@ -10,12 +11,14 @@ interface NavbarProps
 
 export function Navbar({ className }: NavbarProps)
 {
+  const { t } = useTranslation('main-page');
+  const { t: t2 } = useTranslation('about');
 
   return (
     <nav className={classNames(styles.navbar, {}, ['navbar', className])}>
       <div className={styles.links}>
-        <AppLink to='/'>Главная</AppLink>
-        <AppLink to='/about'>О сайте</AppLink>
+        <AppLink to='/'>{t('Главная')}</AppLink>
+        <AppLink to='/about'>{t2('О сайте')}</AppLink>
       </div>
     </nav>
   );

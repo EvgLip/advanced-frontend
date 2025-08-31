@@ -5,6 +5,8 @@ import { MainPage } from '@pages/main-page';
 import { AboutPage } from '@pages/about-page';
 
 import RootLayout from '@pages/RootLayout';
+import { NotFoundPage } from '@pages/NotFoundPage';
+import { LoaderPage } from '@widgets/loader-page';
 
 
 export const router = createBrowserRouter(
@@ -17,16 +19,22 @@ export const router = createBrowserRouter(
           {
             index: true,
             element:
-              <Suspense fallback={<p>Загрузка...</p>}>
+              <Suspense fallback={<LoaderPage />}>
                 <MainPage />
               </Suspense>
           },
           {
             path: '/about',
             element:
-              <Suspense fallback={<p>Загрузка...</p>}>
+              <Suspense fallback={<LoaderPage />}>
                 <AboutPage />
               </Suspense>
+          },
+          {
+            path: '*',
+            element: <NotFoundPage />
+            // element: <LoaderPage />
+
           }
         ]
     },

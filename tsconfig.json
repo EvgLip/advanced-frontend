@@ -19,8 +19,11 @@
     "baseUrl": ".",   // для абсолютного импорта
     "paths":{
       "@*": ["./src/*"],
-    },
+    }
   },
+
+  "include": ["./src", "./config/jest/jest-setup.ts"],
+
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

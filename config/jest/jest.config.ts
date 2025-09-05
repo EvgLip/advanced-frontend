@@ -15,8 +15,8 @@ const config: Config = {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\Евгений\\AppData\\Local\\Temp\\jest",
 
-  // Automatically clear mock calls, instances, contexts and results before every test
-  clearMocks: true,
+  // The root directory that Jest should scan for tests and modules within
+  rootDir: '../../',
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
@@ -32,6 +32,18 @@ const config: Config = {
     "node_modules"
   ],
 
+  // modulePaths: [
+  //   "<rootDir>src",
+  // ],
+
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+
+  moduleNameMapper: {
+    "@shared/(.*)": "<rootDir>/src/shared/$1",
+
+    "\\.s?css$": "identity-obj-proxy",
+  },
+
   // An array of file extensions your modules use
   moduleFileExtensions: [
     "js",
@@ -46,15 +58,15 @@ const config: Config = {
     "node"
   ],
 
-  // The root directory that Jest should scan for tests and modules within
-  rootDir: '../../',
-
   // The glob patterns Jest uses to detect test files
   testMatch: [
     // "**/__tests__/**/*.?([mc])[jt]s?(x)",
     // "**/?(*.)+(spec|test).?([mc])[jt]s?(x)"
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
+
+  // Automatically clear mock calls, instances, contexts and results before every test
+  clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

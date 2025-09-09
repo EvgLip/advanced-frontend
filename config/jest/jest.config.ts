@@ -6,9 +6,6 @@
 import type { Config } from 'jest';
 import path from 'path';
 
-
-console.log(path.resolve(__dirname, "jestEmptyComponent.tsx"));
-
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,

@@ -4,6 +4,10 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
+
+
+console.log(path.resolve(__dirname, "jestEmptyComponent.tsx"));
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -17,6 +21,9 @@ const config: Config = {
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
+
+  // A preset that is used as a base for Jest's configuration
+  preset: "ts-jest",
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
@@ -40,9 +47,20 @@ const config: Config = {
 
   moduleNameMapper: {
     "@shared/(.*)": "<rootDir>/src/shared/$1",
+    "@widgets/(.*)": "<rootDir>/src/widgets/$1",
+    "@app/(.*)": "<rootDir>/src/app/$1",
 
     "\\.s?css$": "identity-obj-proxy",
+    // "\\.svg": "<rootDir>config/jest/jestEmptyComponent.tsx"
+    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
   },
+
+  // // A map from regular expressions to paths to transformers
+  // // transform: undefined,
+  // "transform": {
+  //   "^.+\\.tsx?$": "ts-jest",
+  //   "^.+\\.svg$": "<rootDir>/config/jest/svgTransform.js"
+  // },
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -129,9 +147,6 @@ const config: Config = {
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
 
-  // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
-
   // Run tests from one or more projects
   // projects: undefined,
 
@@ -189,9 +204,6 @@ const config: Config = {
 
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
-
-  // A map from regular expressions to paths to transformers
-  // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

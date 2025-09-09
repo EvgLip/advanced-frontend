@@ -19,7 +19,8 @@
     "baseUrl": ".",   // для абсолютного импорта
     "paths":{
       "@*": ["./src/*"],
-    }
+    },
+    "types": ["jest", "node"]
   },
 
   "include": ["./src", "./config/jest/jest-setup.ts"],

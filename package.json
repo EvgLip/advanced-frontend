@@ -57,6 +57,7 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.23.1",
     "stylelint-config-standard-scss": "^15.0.1",
+    "ts-jest": "^29.4.1",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",

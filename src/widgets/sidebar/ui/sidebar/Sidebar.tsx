@@ -19,14 +19,22 @@ export default function Sidebar(props: SidebarProps)
   const onToggle = () => setIsCollapsed(prev => !prev);
 
   return (
-    <aside className={classNames(classes.sidebar, { [classes.collapsed]: isCollapsed }, [className,])}>
-      <button onClick={onToggle}>
+    <aside
+      data-testid='sidebar'
+      className={classNames(classes.sidebar, { [classes.collapsed]: isCollapsed }, [className,])}>
+
+      <button
+        data-testid='sidebar-toggle'
+        onClick={onToggle}
+      >
         {t('скрыть')}
       </button>
+
       <div className={classes.switchers}>
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
+
     </aside>
   );
 }

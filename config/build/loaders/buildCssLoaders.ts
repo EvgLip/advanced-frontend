@@ -13,8 +13,11 @@ export default function buildCssLoaders(isDev: boolean)
           {
             modules:
             {
-              //для css-модулей генерируем классы по шаблону в зависимости от isDev
+              //Включает модули CSS для файлов, имя, запрос или фрагмент которых соответствуют функции фильтрации.
               auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
+              //отключает именованный экспорт
+              namedExport: false,
+              //для css-модулей генерируем классы по шаблону в зависимости от isDev
               localIdentName: isDev
                 ? '[path][name]__[local]--[hash:base64:5]'
                 : '[hash:base64: 8]',

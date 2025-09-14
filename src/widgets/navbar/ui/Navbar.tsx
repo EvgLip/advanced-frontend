@@ -14,8 +14,6 @@ export function Navbar({ className }: NavbarProps)
   const { t } = useTranslation('main-page');
   const { t: t2 } = useTranslation('about');
 
-  console.log('styles', styles.navbar);
-
   return (
     <nav className={classNames(styles.navbar, {}, [className])}>
       <div className={styles.links}>

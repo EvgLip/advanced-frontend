@@ -1,11 +1,12 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 import { classNames } from '@shared/lib/classNames/classNames';
-import * as classes from './Button.module.scss';
+import classes from './Button.module.scss';
 
 export const ButtonTypeList =
   {
     CLEAR: 'clear',
+    OUTLINE: 'outline',
   } as const;
 
 type ButtonType = (typeof ButtonTypeList)[keyof typeof ButtonTypeList];

@@ -1,14 +1,3 @@
-declare module '*.module.scss'
-{
-  interface IClassNames
-  {
-    [className: string]: string;
-  }
-
-  const className: IClassNames;
-  export = className;
-}
-
 declare module "*.png";
 declare module "*.jpg";
 declare module "*.jpeg";
@@ -25,3 +14,40 @@ declare module "*.svg"
 // }
 
 declare const __IS_DEV__: boolean;
+
+//--------------------------------------------
+//для плагина typescript-plugin-css-modules
+//--------------------------------------------
+declare module '*.module.css' {
+  const classes: { [key: string]: string; };
+  export default classes;
+}
+
+declare module '*.module.scss' {
+  const classes: { [key: string]: string; };
+  export default classes;
+}
+// declare module '*.module.scss'
+// {
+//   interface IClassNames
+//   {
+//     [className: string]: string;
+//   }
+//   const className: IClassNames;
+//   export = className;
+// }
+
+declare module '*.module.sass' {
+  const classes: { [key: string]: string; };
+  export default classes;
+}
+
+declare module '*.module.less' {
+  const classes: { [key: string]: string; };
+  export default classes;
+}
+
+declare module '*.module.styl' {
+  const classes: { [key: string]: string; };
+  export default classes;
+}

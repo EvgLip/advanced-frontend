@@ -20,10 +20,14 @@
     "paths":{
       "@*": ["./src/*"],
     },
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
 
   "include": ["./src", "./config/jest/jest-setup.ts"],
+
+  // "extends": "./tsconfig.json",
+  "files": ["./src/app/types/global.d.ts"],
 
   "ts-node": {
     "compilerOptions": {

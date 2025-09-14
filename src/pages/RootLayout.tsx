@@ -5,7 +5,6 @@ import { Sidebar } from '@widgets/sidebar';
 
 export default function RootLayout()
 {
-
   return (
     <>
       <Navbar />

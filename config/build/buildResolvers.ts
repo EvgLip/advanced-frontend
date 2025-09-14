@@ -1,5 +1,6 @@
 import { ResolveOptions } from 'webpack';
 import { BuildOptions } from './types/config';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 
 export function buildResolvers(options: BuildOptions): ResolveOptions
 {
@@ -10,7 +11,8 @@ export function buildResolvers(options: BuildOptions): ResolveOptions
     mainFiles: ['index'], //файлы эспорта из модулей
     alias: {
       '@*': `${options.paths.src}/*`,
-    }
+    },
+    plugins: [new TsconfigPathsPlugin()]
   };
 
 }

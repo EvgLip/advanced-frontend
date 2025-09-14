@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -10,4 +11,11 @@
   border: none;
   background: none;
   outline: none;
+}
+
+.outline {
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
 }

@@ -1,6 +1,6 @@
 import { classNames } from '@shared/lib/classNames/classNames';
-import * as classes from './LoaderPage.module.scss';
 import { Loader } from '@shared/ui';
+import classes from './LoaderPage.module.scss';
 
 interface LoaderProps
 {

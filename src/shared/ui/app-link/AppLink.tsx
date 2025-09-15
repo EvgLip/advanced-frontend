@@ -2,7 +2,7 @@ import { classNames } from '@shared/lib/classNames/classNames';
 import { type ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-import * as classes from './AppLink.module.scss';
+import classes from './AppLink.module.scss';
 
 interface AppLinkProps extends LinkProps
 {
@@ -32,7 +32,7 @@ export default function AppLink(props: AppLinkProps)
   return (
     <Link
       to={to}
-      className={classNames(classes['app-link'], {}, [className, classes[theme]])}
+      className={classNames(classes.applink, {}, [className, classes[theme]])}
       {...otherProps}
     >
       {children}

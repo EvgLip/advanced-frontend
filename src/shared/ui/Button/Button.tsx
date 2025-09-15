@@ -1,11 +1,12 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 import { classNames } from '@shared/lib/classNames/classNames';
-import * as classes from './Button.module.scss';
+import styles from './Button.module.scss';
 
 export const ButtonTypeList =
   {
     CLEAR: 'clear',
+    OUTLINE: 'outline',
   } as const;
 
 type ButtonType = (typeof ButtonTypeList)[keyof typeof ButtonTypeList];
@@ -23,7 +24,7 @@ export default function Button(props: ButtonProps)
 
   return (
     <button
-      className={classNames(classes.button, {}, [className, classes[appearance]])}
+      className={classNames(styles.button, {}, [className, styles[appearance]])}
       {...otherProps}
     >
       {children}

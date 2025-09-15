@@ -1,9 +1,9 @@
 import { classNames } from '@shared/lib/classNames/classNames';
-import * as classes from './Sidebar.module.scss';
 import { useState } from 'react';
 import { ThemeSwitcher } from '@widgets/theme-switcher';
 import { LanguageSwitcher } from '@widgets/language-switcher';
 import { useTranslation } from 'react-i18next';
+import classes from './Sidebar.module.scss';
 
 interface SidebarProps
 {

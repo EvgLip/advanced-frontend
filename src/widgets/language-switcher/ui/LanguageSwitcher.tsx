@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
-import * as classes from './LanguageSwitcher.module.scss';
 import { classNames } from '@shared/lib/classNames/classNames';
 import { Button, ButtonType } from '@shared/ui';
+import classes from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps
 {
@@ -18,7 +18,7 @@ export default function LanguageSwitcher(props: LanguageSwitcherProps)
   return (
     // <button>Bnt</button>
     <Button
-      className={classNames(classes['language-switcher'], {}, [className])}
+      className={classNames(classes.languageswitcher, {}, [className])}
       appearance={ButtonType.CLEAR}
       onClick={toggle}
     >

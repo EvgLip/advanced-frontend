@@ -11,6 +11,7 @@ export default function buildCssLoaders(isDev: boolean)
           loader: 'css-loader',
           options:
           {
+            sourceMap: true,
             modules:
             {
               //Включает модули CSS для файлов, имя, запрос или фрагмент которых соответствуют функции фильтрации.

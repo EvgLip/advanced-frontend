@@ -1,12 +1,8 @@
 import type { Preview } from '@storybook/react-webpack5';
 
 import StyleDecorator from '../../src/shared/config/storybook/style-decorator/StyleDecorator';
-import '../../src/app/styles/themes/dark.scss';
-import '../../src/app/styles/themes/light.scss';
-import '../../src/app/styles/variables/globall.scss';
-import s from '../../src/app/styles/variables/globall.scss';
-
-console.log('стили', s);
+import ThemeDecorator from '../../src/shared/config/storybook/theme-decorator/ThemeDecorator';
+import { ThemeList } from '../../src/app/providers/ThemeProviders';
 
 const preview: Preview =
 {
@@ -29,6 +25,15 @@ const preview: Preview =
           <StyleDecorator>
             <Story />
           </StyleDecorator >
+        );
+      },
+
+      (Story) =>
+      {
+        return (
+          <ThemeDecorator theme={ThemeList.DARK}>
+            <Story />
+          </ThemeDecorator >
         );
       }
     ],

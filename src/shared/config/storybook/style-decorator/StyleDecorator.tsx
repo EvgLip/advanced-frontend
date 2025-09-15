@@ -1,9 +1,6 @@
 import { ReactNode } from 'react';
 
-import '@app/styles/themes/dark.scss';
-import '@app/styles/themes/light.scss';
-import '@app/styles/variables/globall.scss';
-
+import '@app/styles/index.scss';
 
 interface StyleDecoratorProps
 {
@@ -15,7 +12,7 @@ function StyleDecorator(props: StyleDecoratorProps)
   const { children } = props;
 
   return (
-    <div className='decorator'>
+    <div className='app light page hovered' >
       {children}
     </div>
   );

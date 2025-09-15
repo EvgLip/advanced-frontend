@@ -1,16 +1,14 @@
+import { Decorator } from '@storybook/react-webpack5';
 import '@app/styles/index.scss';
-import { ReactRenderer } from '@storybook/react-webpack5';
-import { PartialStoryFn } from 'storybook/internal/types';
+import { Theme } from '@app/providers/ThemeProviders';
 
-export default function ThemeDecorator(Story: PartialStoryFn<ReactRenderer, {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [x: string]: any;
-}>)
-{
-  return (
-    <div>
-      <Story />
-    </div>
 
-  );
-}
+// const ThemeDecorator: Decorator = (theme: Theme) =>
+//   (Story) =>
+//   (
+//     <div className={`app ${theme}`}>
+//       <Story />
+//     </div >
+//   );
+
+// export default ThemeDecorator;

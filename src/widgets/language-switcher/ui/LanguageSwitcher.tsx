@@ -18,7 +18,7 @@ export default function LanguageSwitcher(props: LanguageSwitcherProps)
   return (
     // <button>Bnt</button>
     <Button
-      className={classNames(classes['language-switcher'], {}, [className])}
+      className={classNames(classes.languageswitcher, {}, [className])}
       appearance={ButtonType.CLEAR}
       onClick={toggle}
     >

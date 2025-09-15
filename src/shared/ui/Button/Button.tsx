@@ -22,8 +22,6 @@ export default function Button(props: ButtonProps)
 {
   const { className, children, appearance, ...otherProps } = props;
 
-  console.log('styles', styles);
-
   return (
     <button
       className={classNames(styles.button, {}, [className, styles[appearance]])}

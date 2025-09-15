@@ -1,8 +1,8 @@
-// @use '../../../app/styles/index.scss';
+ @use '../../../app/styles/index.scss';
 
-.app-link, 
-.app-link:link,
-.app-link:visited {
+.applink, 
+.applink:link,
+.applink:visited {
   display: flex;
   align-items: center;
   height: 100%;
@@ -11,7 +11,7 @@
   color: var(--bg-color);
 }
 
-.app-link:hover {
+.applink:hover {
   background-color: var(--bg-color);
   color: var(--inverted-bg-color);
 }

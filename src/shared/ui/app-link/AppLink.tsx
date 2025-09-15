@@ -32,7 +32,7 @@ export default function AppLink(props: AppLinkProps)
   return (
     <Link
       to={to}
-      className={classNames(classes['app-link'], {}, [className, classes[theme]])}
+      className={classNames(classes.applink, {}, [className, classes[theme]])}
       {...otherProps}
     >
       {children}

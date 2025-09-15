@@ -3,6 +3,10 @@ import { fn } from 'storybook/test';
 
 import { Button, ButtonType } from '@shared/ui/';
 
+import '@app/styles/themes/dark.scss';
+import '@app/styles/themes/light.scss';
+import '@app/styles/variables/globall.scss';
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'shared/Button',

@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
-// import path from 'path';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import buildCssLoaders from '../build/loaders/buildCssLoaders';
 
@@ -12,7 +11,7 @@ const config: StorybookConfig =
   "addons": [
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-docs",
-    "@storybook/addon-onboarding"
+    "@storybook/addon-onboarding",
   ],
   "framework": {
     "name": "@storybook/react-webpack5",

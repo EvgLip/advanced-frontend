@@ -1,3 +1,5 @@
+ @use '../../../app/styles/index.scss';
+
 .button {
   display: flex;
   justify-content: center;
@@ -18,4 +20,5 @@
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background: none;
+  font-size: 30px;
 }

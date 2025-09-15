@@ -31,7 +31,7 @@ const preview: Preview =
       (Story) =>
       {
         return (
-          <ThemeDecorator theme={ThemeList.DARK}>
+          <ThemeDecorator theme={ThemeList.LIGHT}>
             <Story />
           </ThemeDecorator >
         );

@@ -14,7 +14,7 @@ function ThemeDecorator(props: ThemeDecoratorProps)
   const { children, theme } = props;
 
   return (
-    <div className={`app page hovered ${theme}`}>
+    <div className={`app ${theme}`}>
       {children}
     </div >
   );

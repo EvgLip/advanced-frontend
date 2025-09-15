@@ -12,7 +12,7 @@ function StyleDecorator(props: StyleDecoratorProps)
   const { children } = props;
 
   return (
-    <div className='app light page hovered' >
+    <div className='app' >
       {children}
     </div>
   );

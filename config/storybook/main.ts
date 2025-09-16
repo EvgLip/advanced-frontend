@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
-import buildCssLoaders from '../build/loaders/buildCssLoaders';
+import buildCssLoader from '../build/loaders/buildCssLoader';
+import buildSvgLoader from '../build/loaders/buildSvgLoader';
+import { RuleSetRule } from 'webpack';
 
 const config: StorybookConfig =
 {
@@ -37,7 +39,16 @@ const config: StorybookConfig =
     config.module.rules = [
       ...(config.module.rules || []),
     ];
-    config.module.rules.push(buildCssLoaders(true));
+    config.module.rules.push(buildCssLoader(true));
+
+
+    config.module.rules = config.module.rules.map((rule) =>
+    {
+      if (rule && (rule !== "...") && /svg/.test(rule.test as string))
+        return { ...rule, exclude: /\.svg$/i };
+      return rule;
+    });
+    config.module.rules.push(buildSvgLoader());
 
     return config;
   },

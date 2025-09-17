@@ -17,8 +17,8 @@ export function Navbar({ className }: NavbarProps)
   return (
     <nav className={classNames(styles.navbar, {}, ['navbar', className])}>
       <div className={styles.links}>
-        <AppLink to='/'>{t('Главная')}</AppLink>
-        <AppLink to='/about'>{t2('О сайте')}</AppLink>
+        <AppLink className='navbarlink' to='/'>{t('Главная')}</AppLink>
+        <AppLink className='navbarlink' to='/about'>{t2('О сайте')}</AppLink>
       </div>
     </nav>
   );

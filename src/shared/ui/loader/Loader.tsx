@@ -9,7 +9,7 @@ interface LoaderProps
 function Loader({ className }: LoaderProps)
 {
   return (
-    < div className={classNames(classes['lds-spinner'], {}, [className])}>
+    < div className={classNames(classes['ldsspinner'], {}, [className])}>
       <div></div>
       <div></div>
       <div></div>

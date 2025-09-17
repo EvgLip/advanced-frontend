@@ -8,7 +8,19 @@
   height: 100%;
   padding: 0 1rem;
   text-decoration: none;
-  color: var(--bg-color);
+}
+
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--secondary-color);
+}
+
+.red {
+    color: #ff0000;
 }
 
 .applink:hover {

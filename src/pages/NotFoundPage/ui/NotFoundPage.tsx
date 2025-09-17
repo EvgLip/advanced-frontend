@@ -12,7 +12,7 @@ function NotFoundPage({ className }: NotFoundPageProps)
   const { t } = useTranslation('not-found-page');
 
   return (
-    <div className={classNames(classes['not-found-page'])}>
+    <div className={classNames(classes['notfoundpage'])}>
       {t('Страница не найдена')}
     </div>
   );

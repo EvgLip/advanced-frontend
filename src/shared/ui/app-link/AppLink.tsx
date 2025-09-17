@@ -15,6 +15,7 @@ export const AppLinkTheme =
   {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
+    RED: 'red',
   } as const;
 
 type LinkTheme = (typeof AppLinkTheme)[keyof typeof AppLinkTheme];

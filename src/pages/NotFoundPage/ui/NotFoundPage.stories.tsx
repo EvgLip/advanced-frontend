@@ -31,6 +31,18 @@ export const Light: Story = {
   },
 };
 
+Light.decorators =
+  [
+    (Story) =>
+    {
+      return (
+        <ThemeDecorator theme={ThemeList.LIGHT} >
+          <Story />
+        </ThemeDecorator >
+      );
+    },
+  ];
+
 export const Dark: Story = {
   args: {
   },

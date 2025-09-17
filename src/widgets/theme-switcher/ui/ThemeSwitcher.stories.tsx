@@ -1,24 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { fn } from 'storybook/test';
 
-import { AppLink, AppLinkTheme } from '@shared/ui/';
-import { ThemeList } from '@app/providers/ThemeProviders';
-import RouterDecorator from '@shared/config/storybook/RouterDecorator';
+import { ThemeSwitcher } from '@widgets/theme-switcher';
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
+import { ThemeList } from '@app/providers/ThemeProviders';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'shared/AppLink',
-  component: AppLink,
-  decorators: [
-    (Story) =>
-    {
-      return (
-        <RouterDecorator theme={ThemeList.LIGHT} >
-          <Story />
-        </RouterDecorator >
-      );
-    },
-  ],
+  title: 'widgets/ThemeSwitcher',
+  component: ThemeSwitcher,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     //layout: 'centered',
@@ -26,31 +16,37 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-  },
+  argTypes: {},
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { to: '/' },
-} satisfies Meta<typeof AppLink>;
+  args: {},
+} satisfies Meta<typeof ThemeSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const PrimaryLight: Story = {
+export const Light: Story = {
+  args: {},
+};
+
+Light.decorators =
+  [
+    (Story) =>
+    {
+      return (
+        <ThemeDecorator theme={ThemeList.LIGHT} >
+          <Story />
+        </ThemeDecorator >
+      );
+    },
+  ];
+
+export const Dark: Story = {
   args: {
-    children: 'Primary',
-    theme: AppLinkTheme.PRIMARY,
   },
 };
 
-export const PrimaryDark: Story = {
-  args: {
-    children: 'Primary',
-    theme: AppLinkTheme.PRIMARY,
-  },
-};
-
-PrimaryDark.decorators =
+Dark.decorators =
   [
     (Story) =>
     {
@@ -61,36 +57,3 @@ PrimaryDark.decorators =
       );
     },
   ];
-
-export const SecondaryLight: Story = {
-  args: {
-    children: 'Secondary',
-    theme: AppLinkTheme.SECONDARY,
-  },
-};
-
-export const SecondaryDark: Story = {
-  args: {
-    children: 'Secondary',
-    theme: AppLinkTheme.SECONDARY,
-  },
-};
-
-SecondaryDark.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <ThemeDecorator theme={ThemeList.DARK} >
-          <Story />
-        </ThemeDecorator >
-      );
-    },
-  ];
-
-export const Red: Story = {
-  args: {
-    children: 'Secondary',
-    theme: AppLinkTheme.RED,
-  },
-};

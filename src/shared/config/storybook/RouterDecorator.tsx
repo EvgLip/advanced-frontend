@@ -7,7 +7,7 @@ import { Theme } from '@app/providers/ThemeProviders';
 interface RouterDecoratorProps
 {
   children: ReactNode;
-  theme: Theme;
+  theme?: Theme;
 }
 
 export default function RouterDecorator(props: RouterDecoratorProps) 

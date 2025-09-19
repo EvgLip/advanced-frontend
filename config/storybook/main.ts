@@ -14,6 +14,7 @@ const config: StorybookConfig =
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-docs",
     "@storybook/addon-onboarding",
+    "@chromatic-com/storybook"
   ],
   "framework": {
     "name": "@storybook/react-webpack5",
@@ -42,6 +43,7 @@ const config: StorybookConfig =
     config.module.rules.push(buildCssLoader(true));
 
 
+    //работа с svg
     config.module.rules = config.module.rules.map((rule) =>
     {
       if (rule && (rule !== "...") && /svg/.test(rule.test as string))

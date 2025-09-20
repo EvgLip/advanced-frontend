@@ -18,6 +18,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   children: ReactNode;
 }
 
+//комент
 export default function Button(props: ButtonProps)
 {
   const { className, children, appearance, ...otherProps } = props;

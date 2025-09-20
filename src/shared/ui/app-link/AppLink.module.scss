@@ -1,4 +1,4 @@
- @use '../../../app/styles/index.scss';
+ @use '../../../app/styles/index';
 
 .applink, 
 .applink:link,
@@ -20,7 +20,7 @@
 }
 
 .red {
-    color: #ff0000;
+    color: #f00;
 }
 
 .applink:hover {

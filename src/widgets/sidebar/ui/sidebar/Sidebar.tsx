@@ -10,6 +10,7 @@ interface SidebarProps
   className?: string;
 }
 
+//коментарий для проверки ci на pull request
 export default function Sidebar(props: SidebarProps)
 {
   const { className } = props;

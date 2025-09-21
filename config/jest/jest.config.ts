@@ -48,16 +48,16 @@ const config: Config = {
     "@app/(.*)": "<rootDir>/src/app/$1",
 
     "\\.s?css$": "identity-obj-proxy",
-    // "\\.svg": "<rootDir>config/jest/jestEmptyComponent.tsx"
-    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
+    // "\\.svg": "<rootDir>config/jest/__mocks__/svg.tsx",
+    // "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
   },
 
   // // A map from regular expressions to paths to transformers
   // // transform: undefined,
-  // "transform": {
-  //   "^.+\\.tsx?$": "ts-jest",
-  //   "^.+\\.svg$": "<rootDir>/config/jest/svgTransform.js"
-  // },
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.svg$": "jest-transformer-svg",
+  },
 
   // An array of file extensions your modules use
   moduleFileExtensions: [

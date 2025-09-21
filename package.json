@@ -59,6 +59,7 @@
     "install": "^0.13.0",
     "jest": "^30.1.1",
     "jest-environment-jsdom": "^30.1.1",
+    "jest-transformer-svg": "^2.1.0",
     "mini-css-extract-plugin": "^2.9.2",
     "npm": "^11.4.2",
     "regenerator-runtime": "^0.14.1",

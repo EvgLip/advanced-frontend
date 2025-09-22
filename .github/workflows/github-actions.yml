@@ -2,8 +2,8 @@ name: listing, testing, building
 on: 
   push:
     branches: [ main ] 
-  pull_request:
-    branches: [ main ]
+  #pull_request:
+    #branches: [ main ]
 
 jobs:
   integration: 
@@ -33,3 +33,5 @@ jobs:
       uses: chromaui/action@latest
       with:
         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        onlyChanged: true
+        exitZeroOnChanges: false

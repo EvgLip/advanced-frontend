@@ -28,6 +28,11 @@ dist-ssr
 # env files (can opt-in for committing if needed)
 .env*
 
+#chromatic
+build-storybook.log
+chromatic.log
+chromatic-build-*.xml
+chromatic-diagnostics.json
 
 *storybook.log
 storybook-static

@@ -8,15 +8,15 @@ export const ButtonTypeList =
     CLEAR: 'clear',
     OUTLINE: 'outline',
     BACKGROUND: 'background',
-    BACKGROUND_INVERTED: 'backgroundInverted'
+    BACKGROUND_INVERTED: 'backgroundinverted'
   } as const;
 
 type ButtonType = (typeof ButtonTypeList)[keyof typeof ButtonTypeList];
 
 export const ButtonSizeList =
   {
-    M: 'sizeM',
-    L: 'sizeL',
+    M: 'sizem',
+    L: 'sizel',
     XL: 'sizexl',
   } as const;
 

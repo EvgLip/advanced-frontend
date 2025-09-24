@@ -37,7 +37,7 @@ export default function Sidebar(props: SidebarProps)
     >
 
       <Button
-        className={classes.collapseBtn}
+        className={classes.collapsebtn}
         square
         size={ButtonSize.XL}
         data-testid='sidebar-toggle'

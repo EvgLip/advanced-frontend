@@ -1,12 +1,17 @@
-import AppLink, { AppLinkTheme } from './app-link/AppLink';
-import Button, { ButtonTypeList as ButtonType } from './button/Button';
+import AppLink, { LinkThemeList } from './app-link/AppLink';
+import Button,
+{
+  ButtonTypeList as ButtonType,
+  ButtonSizeList as ButtonSize
+} from './button/Button';
 import Loader from './loader/Loader';
 
 export
 {
   AppLink,
-  AppLinkTheme,
+  LinkThemeList,
   Button,
   ButtonType,
+  ButtonSize,
   Loader,
 };

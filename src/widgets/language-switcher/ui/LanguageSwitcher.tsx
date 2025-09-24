@@ -7,11 +7,12 @@ import classes from './LanguageSwitcher.module.scss';
 interface LanguageSwitcherProps
 {
   className?: string;
+  short?: boolean;
 }
 
 export default function LanguageSwitcher(props: LanguageSwitcherProps)
 {
-  const { className } = props;
+  const { className, short } = props;
   const { t, i18n } = useTranslation('translation');
   const toggle = () => i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
 
@@ -22,7 +23,8 @@ export default function LanguageSwitcher(props: LanguageSwitcherProps)
       appearance={ButtonType.CLEAR}
       onClick={toggle}
     >
-      {t('язык')}
+
+      {t(short ? 'сокращенный язык' : 'язык')}
     </Button>
   );
 }

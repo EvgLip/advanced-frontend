@@ -1,30 +1,57 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 import { classNames } from '@shared/lib/classNames/classNames';
-import styles from './Button.module.scss';
+import classes from './Button.module.scss';
 
 export const ButtonTypeList =
   {
     CLEAR: 'clear',
     OUTLINE: 'outline',
+    BACKGROUND: 'background',
+    BACKGROUND_INVERTED: 'backgroundInverted'
   } as const;
 
 type ButtonType = (typeof ButtonTypeList)[keyof typeof ButtonTypeList];
+
+export const ButtonSizeList =
+  {
+    M: 'sizeM',
+    L: 'sizeL',
+    XL: 'sizexl',
+  } as const;
+
+type ButtonSize = (typeof ButtonSizeList)[keyof typeof ButtonSizeList];
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 {
   className?: string;
   appearance?: ButtonType;
+  square?: boolean;
+  size?: ButtonSize;
   children: ReactNode;
 }
 
 export default function Button(props: ButtonProps)
 {
-  const { className, children, appearance, ...otherProps } = props;
+  const {
+    className,
+    children,
+    appearance,
+    square = false,
+    size,
+    ...otherProps
+  } = props;
+
+  const mods: Record<string, boolean> =
+  {
+    [classes[appearance]]: Boolean(appearance),
+    [classes.square]: square,
+    [classes[size]]: Boolean(size)
+  };
 
   return (
     <button
-      className={classNames(styles.button, {}, [className, styles[appearance]])}
+      className={classNames(classes.button, mods, [className])}
       {...otherProps}
     >
       {children}

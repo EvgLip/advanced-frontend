@@ -11,14 +11,14 @@ interface AppLinkProps extends LinkProps
   theme?: LinkTheme;
 }
 //вместо enum
-export const AppLinkTheme =
+export const LinkThemeList =
   {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
     RED: 'red',
   } as const;
 
-type LinkTheme = (typeof AppLinkTheme)[keyof typeof AppLinkTheme];
+type LinkTheme = (typeof LinkThemeList)[keyof typeof LinkThemeList];
 
 export default function AppLink(props: AppLinkProps)
 {
@@ -26,7 +26,7 @@ export default function AppLink(props: AppLinkProps)
     to,
     className,
     children,
-    theme = AppLinkTheme.PRIMARY,
+    theme = LinkThemeList.PRIMARY,
     ...otherProps
   } = props;
 

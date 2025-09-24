@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { fn } from 'storybook/test';
 
 import { Sidebar } from '@widgets/sidebar';
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';

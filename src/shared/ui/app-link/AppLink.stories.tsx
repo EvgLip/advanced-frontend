@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import { AppLink, AppLinkTheme } from '@shared/ui/';
+import { AppLink, LinkThemeList } from '@shared/ui/';
 import { ThemeList } from '@app/providers/ThemeProviders';
 import RouterDecorator from '@shared/config/storybook/RouterDecorator';
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
@@ -39,14 +39,14 @@ type Story = StoryObj<typeof meta>;
 export const PrimaryLight: Story = {
   args: {
     children: 'Primary',
-    theme: AppLinkTheme.PRIMARY,
+    theme: LinkThemeList.PRIMARY,
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
     children: 'Primary',
-    theme: AppLinkTheme.PRIMARY,
+    theme: LinkThemeList.PRIMARY,
   },
 };
 
@@ -65,14 +65,14 @@ PrimaryDark.decorators =
 export const SecondaryLight: Story = {
   args: {
     children: 'Secondary',
-    theme: AppLinkTheme.SECONDARY,
+    theme: LinkThemeList.SECONDARY,
   },
 };
 
 export const SecondaryDark: Story = {
   args: {
     children: 'Secondary',
-    theme: AppLinkTheme.SECONDARY,
+    theme: LinkThemeList.SECONDARY,
   },
 };
 
@@ -91,6 +91,6 @@ SecondaryDark.decorators =
 export const Red: Story = {
   args: {
     children: 'Secondary',
-    theme: AppLinkTheme.RED,
+    theme: LinkThemeList.RED,
   },
 };

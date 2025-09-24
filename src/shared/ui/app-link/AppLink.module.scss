@@ -1,29 +1,17 @@
  @use '../../../app/styles/index';
 
-.applink, 
-.applink:link,
-.applink:visited {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 1rem;
-  text-decoration: none;
+.appLink {
+    color: var(--primary-color);
 }
-
 
 .primary {
     color: var(--primary-color);
 }
 
 .secondary {
-    color: var(--secondary-color);
+    color: var(--inverted-primary-color);
 }
 
 .red {
-    color: #f00;
-}
-
-.applink:hover {
-  background-color: var(--bg-color);
-  color: var(--inverted-bg-color);
+    color: red;
 }

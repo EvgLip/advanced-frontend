@@ -30,9 +30,6 @@ export default function Sidebar(props: SidebarProps)
 
   const onToggle = () => setIsCollapsed(prev => !prev);
 
-  console.log('тест', LinkThemeList.SECONDARY);
-
-
   return (
     <aside
       data-testid='sidebar'

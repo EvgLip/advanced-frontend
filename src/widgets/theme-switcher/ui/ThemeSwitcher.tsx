@@ -14,7 +14,6 @@ export default function ThemeSwitcher(props: ThemeSwitcherProps)
 {
   const { className } = props;
   const { theme, toggleTheme } = useTheme();
-  console.log('тема', theme);
 
   return (
     <Button

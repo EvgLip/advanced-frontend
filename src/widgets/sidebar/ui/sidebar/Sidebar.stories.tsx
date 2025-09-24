@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Sidebar } from '@widgets/sidebar';
-import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@app/providers/ThemeProviders';
+import RouterDecorator from '@shared/config/storybook/RouterDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -35,9 +35,9 @@ Light.decorators =
     (Story) =>
     {
       return (
-        <ThemeDecorator theme={ThemeList.LIGHT} >
+        <RouterDecorator theme={ThemeList.LIGHT} >
           <Story />
-        </ThemeDecorator >
+        </RouterDecorator >
       );
     },
   ];
@@ -52,9 +52,9 @@ Dark.decorators =
     (Story) =>
     {
       return (
-        <ThemeDecorator theme={ThemeList.DARK} >
+        <RouterDecorator theme={ThemeList.LIGHT} >
           <Story />
-        </ThemeDecorator >
+        </RouterDecorator >
       );
     },
   ];

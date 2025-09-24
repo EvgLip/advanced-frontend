@@ -11,7 +11,7 @@ import { ThemeSwitcher } from '@widgets/theme-switcher';
 import { LanguageSwitcher } from '@widgets/language-switcher';
 
 import AboutIcon from '@shared/assets/icons/about-20-20.svg';
-import HomeIcon from '@shared/assets/icons/home20-20.svg';
+import HomeIcon from '@shared/assets/icons/main-20-20.svg';
 
 
 interface SidebarProps
@@ -30,14 +30,27 @@ export default function Sidebar(props: SidebarProps)
 
   const onToggle = () => setIsCollapsed(prev => !prev);
 
+  console.log('тест', LinkThemeList.SECONDARY);
+
 
   return (
     <aside
       data-testid='sidebar'
-      className={classNames(classes.sidebar, { [classes.collapsed]: isCollapsed }, [className,])}>
+      className={classNames(classes.sidebar, { [classes.collapsed]: isCollapsed }, [className,])}
+    >
+
+      <Button
+        className={classes.collapseBtn}
+        square
+        size={ButtonSize.XL}
+        data-testid='sidebar-toggle'
+        onClick={onToggle}
+        appearance={ButtonTypeList.BACKGROUND_INVERTED}
+      >
+        {isCollapsed ? '>' : '<'}
+      </Button>
 
       <div className={classes.items}>
-
         <AppLink
           className={classes.item}
           theme={LinkThemeList.SECONDARY}
@@ -60,17 +73,6 @@ export default function Sidebar(props: SidebarProps)
           </span>
         </AppLink>
       </div>
-
-      <Button
-        className={classes.collapseBtn}
-        square
-        size={ButtonSize.XL}
-        data-testid='sidebar-toggle'
-        onClick={onToggle}
-        appearance={ButtonTypeList.BACKGROUND_INVERTED}
-      >
-        {isCollapsed ? '>' : '<'}
-      </Button>
 
       <div className={classes.switchers}>
         <ThemeSwitcher />

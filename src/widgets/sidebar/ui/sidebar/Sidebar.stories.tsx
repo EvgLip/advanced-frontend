@@ -52,7 +52,7 @@ Dark.decorators =
     (Story) =>
     {
       return (
-        <RouterDecorator theme={ThemeList.LIGHT} >
+        <RouterDecorator theme={ThemeList.DARK} >
           <Story />
         </RouterDecorator >
       );

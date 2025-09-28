@@ -1,11 +1,8 @@
-@use '../../../app/styles/index.scss';
+@use '../../../app/styles/index';
 
 .modal {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   z-index: -1;
   opacity: 0;
   pointer-events: none;
@@ -24,7 +21,7 @@
   padding: 2rem;
   max-width: 60%;
   border-radius: 1.2rem;
-  background: #ffffff; //var(--bg-modal);
+  background: #fff; // var(--bg-modal);
   transform: scale(0.2);
   transition: 0.3s transform;
 }

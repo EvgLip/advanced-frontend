@@ -1,16 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { ComponentProps } from 'react';
 
-import { Navbar } from '@widgets/navbar';
+import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@app/providers/ThemeProviders';
-import RouterDecorator from '@shared/config/storybook/RouterDecorator';
-
-type NavbarWithModal = ComponentProps<typeof Navbar> & { modal?: string; };
+import { Modal } from '@widgets/modal';
+import { Portal } from '@shared/ui';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'widgets/Navbar',
-  component: Navbar,
+  title: 'widgets/Modal',
+  component: Modal,
+  decorators: [
+    (Story) =>
+    {
+      return (
+        <ThemeDecorator theme={ThemeList.LIGHT} >
+          <Story />
+        </ThemeDecorator >
+      );
+    },
+  ],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     //layout: 'centered',
@@ -22,42 +30,16 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {},
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof Modal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Light: Story = {
-  args: {
-  },
+export const Primary: Story = {
+  args:
+  {
+    children: 'Модальное окно',
+    isOpen: true,
+  }
 };
-
-Light.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <RouterDecorator theme={ThemeList.LIGHT} >
-          <Story />
-        </RouterDecorator >
-      );
-    },
-  ];
-
-export const Dark: Story = {
-  args: {
-  },
-};
-
-Dark.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <RouterDecorator theme={ThemeList.DARK} >
-          <Story />
-        </RouterDecorator >
-      );
-    },
-  ];

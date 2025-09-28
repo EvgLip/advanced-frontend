@@ -5,6 +5,7 @@ import Button,
   ButtonSizeList as ButtonSize
 } from './button/Button';
 import Loader from './loader/Loader';
+import Portal from './portal/Portal';
 
 export
 {
@@ -14,4 +15,5 @@ export
   ButtonType,
   ButtonSize,
   Loader,
+  Portal,
 };

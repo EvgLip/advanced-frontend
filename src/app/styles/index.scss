@@ -13,11 +13,14 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font: var(--font-m);
+}
+
 .app {
   min-height: 100vh;
-  font: var(--font-m);
   background-color: var(--bg-color);
-  color: var(--primary-color); 
+  color: var(--inverted-primary-color); 
 }
 
 .page {

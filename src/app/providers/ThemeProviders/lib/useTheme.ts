@@ -22,7 +22,7 @@ export default function useTheme(): UseThemeResult
     //сохраняем тему в localStorage
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
-
+  // подменяем context.setTheme на toggleTheme
   return {
     theme: context.theme,
     toggleTheme,

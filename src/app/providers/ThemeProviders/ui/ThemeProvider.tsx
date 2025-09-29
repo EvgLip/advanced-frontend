@@ -24,7 +24,8 @@ export default function ThemeProvider(props: ThemeProviderProps)
       {
         theme,
         setTheme,
-      }), [theme]
+      }),
+    [theme]
   );
 
   return (

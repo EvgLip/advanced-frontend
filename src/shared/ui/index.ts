@@ -6,6 +6,7 @@ import Button,
 } from './button/Button';
 import Loader from './loader/Loader';
 import Portal from './portal/Portal';
+import Modal from './modal/Modal';
 
 export
 {
@@ -16,4 +17,5 @@ export
   ButtonSize,
   Loader,
   Portal,
+  Modal,
 };

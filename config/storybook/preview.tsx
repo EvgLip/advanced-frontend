@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react-webpack5';
 
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
+import '@app/styles/index.scss';
 
 const preview: Preview =
 {

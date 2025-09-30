@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 import
 {
   LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps, ThemeList
@@ -27,6 +27,23 @@ export default function ThemeProvider(props: ThemeProviderProps)
       }),
     [theme]
   );
+
+  useEffect(
+    function ()
+    {
+      const html = document.documentElement.classList;
+      if (theme === ThemeList.DARK)
+      {
+        html.add(ThemeList.DARK);
+        html.remove(ThemeList.LIGHT);
+      }
+      else
+      {
+        html.add(ThemeList.LIGHT);
+        html.remove(ThemeList.DARK);
+      }
+    }
+    , [theme]);
 
   return (
     <ThemeContext value={contextValues}>

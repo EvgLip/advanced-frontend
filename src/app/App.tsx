@@ -12,7 +12,7 @@ export default function App()
   const { theme } = useTheme();
 
   return (
-    <div className={classNames('app', { hovered: true, selected: false }, [theme, 'page'])}>
+    <div className={classNames('app', { hovered: true, selected: false }, ['page'])}>
       <RouterProvider router={AppRouter} />
     </div>
   );

@@ -1,7 +1,8 @@
 import type { Preview } from '@storybook/react-webpack5';
 
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
-import { ThemeList, ThemeProvider } from '../../src/app/providers/ThemeProviders';
+import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator';
+import { ThemeList } from '../../src/app/providers/ThemeProviders';
 
 
 const preview: Preview =
@@ -33,9 +34,9 @@ const preview: Preview =
       {
         const { theme = ThemeList.LIGHT } = parameters;
         return (
-          <ThemeProvider initialTheme={theme}>
+          <ThemeDecorator theme={theme}>
             <Story />
-          </ThemeProvider>
+          </ThemeDecorator>
         );
       },
     ],

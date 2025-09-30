@@ -1,7 +1,7 @@
 import { classNames } from '@shared/lib/classNames/classNames';
 
 import styles from './Navbar.module.scss';
-import { Modal } from '@widgets/modal';
+import { Modal } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonType } from '@shared/ui';
 import { useState } from 'react';

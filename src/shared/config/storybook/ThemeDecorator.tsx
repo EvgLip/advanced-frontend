@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Theme } from '@app/providers/ThemeProviders';
+import { Theme, ThemeProvider } from '@app/providers/ThemeProviders';
 import '@app/styles/index.scss';
 
 interface ThemeDecoratorProps
@@ -11,12 +11,12 @@ interface ThemeDecoratorProps
 
 function ThemeDecorator(props: ThemeDecoratorProps) 
 {
-  const { children, theme } = props;
 
+  const { theme, children } = props;
   return (
-    <div className={`app ${theme}`}>
+    <ThemeProvider initialTheme={theme}>
       {children}
-    </div >
+    </ThemeProvider>
   );
 
 };

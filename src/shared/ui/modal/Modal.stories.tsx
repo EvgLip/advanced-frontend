@@ -2,23 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@app/providers/ThemeProviders';
-import { Modal } from '@widgets/modal';
-import { Portal } from '@shared/ui';
+import { Modal } from '@shared/ui';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'widgets/Modal',
+  title: 'shared/Modal',
   component: Modal,
-  decorators: [
-    (Story) =>
-    {
-      return (
-        <ThemeDecorator theme={ThemeList.LIGHT} >
-          <Story />
-        </ThemeDecorator >
-      );
-    },
-  ],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     //layout: 'centered',
@@ -36,10 +25,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Light: Story = {
   args:
   {
     children: 'Модальное окно',
     isOpen: true,
+  }
+};
+
+export const Dark: Story = {
+  args:
+  {
+    children: 'Модальное окно',
+    isOpen: true,
+  },
+  parameters:
+  {
+    theme: ThemeList.DARK
   }
 };

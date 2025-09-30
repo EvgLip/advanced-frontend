@@ -13,7 +13,7 @@ const meta = {
     (Story) =>
     {
       return (
-        <RouterDecorator theme={ThemeList.LIGHT} >
+        <RouterDecorator >
           <Story />
         </RouterDecorator >
       );
@@ -48,19 +48,11 @@ export const PrimaryDark: Story = {
     children: 'Primary',
     theme: LinkThemeList.PRIMARY,
   },
+  parameters:
+  {
+    theme: ThemeList.DARK
+  }
 };
-
-PrimaryDark.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <ThemeDecorator theme={ThemeList.DARK} >
-          <Story />
-        </ThemeDecorator >
-      );
-    },
-  ];
 
 export const SecondaryLight: Story = {
   args: {
@@ -74,19 +66,11 @@ export const SecondaryDark: Story = {
     children: 'Secondary',
     theme: LinkThemeList.SECONDARY,
   },
+  parameters:
+  {
+    theme: ThemeList.DARK
+  }
 };
-
-SecondaryDark.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <ThemeDecorator theme={ThemeList.DARK} >
-          <Story />
-        </ThemeDecorator >
-      );
-    },
-  ];
 
 export const Red: Story = {
   args: {

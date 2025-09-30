@@ -85,19 +85,11 @@ export const OutlineDark: Story = {
     children: 'Outline',
     appearance: ButtonType.OUTLINE,
   },
+  parameters:
+  {
+    theme: ThemeList.DARK
+  }
 };
-
-OutlineDark.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <ThemeDecorator theme={ThemeList.DARK} >
-          <Story />
-        </ThemeDecorator >
-      );
-    },
-  ];
 
 export const BackgroundAppearanse: Story = {
   args: {

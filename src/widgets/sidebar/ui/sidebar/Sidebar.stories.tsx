@@ -8,6 +8,17 @@ import RouterDecorator from '@shared/config/storybook/RouterDecorator';
 const meta = {
   title: 'widgets/Sidebar',
   component: Sidebar,
+  decorators:
+    [
+      (Story) =>
+      {
+        return (
+          <RouterDecorator >
+            <Story />
+          </RouterDecorator >
+        );
+      },
+    ],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     //layout: 'centered',
@@ -30,31 +41,11 @@ export const Light: Story = {
   },
 };
 
-Light.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <RouterDecorator theme={ThemeList.LIGHT} >
-          <Story />
-        </RouterDecorator >
-      );
-    },
-  ];
-
 export const Dark: Story = {
   args: {
   },
+  parameters:
+  {
+    theme: ThemeList.DARK
+  }
 };
-
-Dark.decorators =
-  [
-    (Story) =>
-    {
-      return (
-        <RouterDecorator theme={ThemeList.DARK} >
-          <Story />
-        </RouterDecorator >
-      );
-    },
-  ];

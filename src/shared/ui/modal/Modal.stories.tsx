@@ -8,16 +8,6 @@ import { Modal } from '@shared/ui';
 const meta = {
   title: 'shared/Modal',
   component: Modal,
-  decorators: [
-    (Story) =>
-    {
-      return (
-        <ThemeDecorator theme={ThemeList.LIGHT} >
-          <Story />
-        </ThemeDecorator >
-      );
-    },
-  ],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     //layout: 'centered',
@@ -35,10 +25,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Light: Story = {
   args:
   {
     children: 'Модальное окно',
     isOpen: true,
+  }
+};
+
+export const Dark: Story = {
+  args:
+  {
+    children: 'Модальное окно',
+    isOpen: true,
+  },
+  parameters:
+  {
+    theme: ThemeList.DARK
   }
 };

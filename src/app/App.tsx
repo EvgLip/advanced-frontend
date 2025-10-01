@@ -4,7 +4,7 @@ import { AppRouter } from '@app/providers/router';
 import { classNames } from '@shared/lib/classNames/classNames';
 
 import './styles/index.scss';
-import { useTheme } from './providers/ThemeProviders';
+import { useTheme } from './providers/theme-providers';
 
 
 export default function App()

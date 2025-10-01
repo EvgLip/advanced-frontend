@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { AppLink, LinkThemeList } from '@shared/ui/';
-import { ThemeList } from '@app/providers/ThemeProviders';
+import { ThemeList } from '@app/providers/theme-providers';
 import RouterDecorator from '@shared/config/storybook/RouterDecorator';
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
 

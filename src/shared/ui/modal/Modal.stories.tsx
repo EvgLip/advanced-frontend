@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
-import { ThemeList } from '@app/providers/ThemeProviders';
+import { ThemeList } from '@app/providers/theme-providers';
 import { Modal } from '@shared/ui';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

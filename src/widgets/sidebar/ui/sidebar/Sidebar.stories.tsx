@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Sidebar } from '@widgets/sidebar';
-import { ThemeList } from '@app/providers/ThemeProviders';
+import { ThemeList } from '@app/providers/theme-providers';
 import RouterDecorator from '@shared/config/storybook/RouterDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

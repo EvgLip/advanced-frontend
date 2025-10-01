@@ -1,5 +1,4 @@
-import { useTheme } from '@app/providers/ThemeProviders';
-import { ThemeList } from '@app/providers/ThemeProviders';
+import { useTheme, ThemeList } from '@app/providers/theme-providers';
 import { classNames } from '@shared/lib/classNames/classNames';
 import { Button, ButtonType } from '@shared/ui';
 import DarkIcon from '@shared/assets/icons/dark-icon.svg';

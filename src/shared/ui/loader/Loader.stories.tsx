@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Loader } from '@shared/ui/';
-import { ThemeList } from '@app/providers/ThemeProviders';
+import { ThemeList } from '@app/providers/theme-providers';
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

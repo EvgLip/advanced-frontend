@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 
 import MainPage from '@pages/main-page/ui/MainPage';
 import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
-import { ThemeList } from '@app/providers/ThemeProviders';
+import { ThemeList } from '@app/providers/theme-providers';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

@@ -2,7 +2,7 @@ import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from '@app/App';
-import { ThemeProvider } from '@app/providers/ThemeProviders';
+import { ThemeProvider } from '@app/providers/theme-providers';
 
 import '@shared/config/i18next/i18next';
 

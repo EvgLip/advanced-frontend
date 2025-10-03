@@ -1,12 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Suspense } from 'react';
 
-import { MainPage } from '@pages/main-page';
-import { AboutPage } from '@pages/about-page';
+import { MainPage } from '@/pages/main-page';
+import { AboutPage } from '@/pages/about-page';
 
-import RootLayout from '@pages/RootLayout';
-import { NotFoundPage } from '@pages/NotFoundPage';
-import { LoaderPage } from '@widgets/loader-page';
+
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { LoaderPage } from '@/widgets/loader-page';
+import RootLayout from '@/pages/RootLayout';
 
 
 export const router = createBrowserRouter(

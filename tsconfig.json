@@ -18,7 +18,7 @@
     // c флагом результат - console.log(Moment) => [object Object]
     "baseUrl": ".",   // для абсолютного импорта
     "paths":{
-      "@*": ["./src/*"],
+      "@/*": ["./src/*"],
     },
     "types": ["jest", "node"],
     "plugins": [{ "name": "typescript-plugin-css-modules" }]

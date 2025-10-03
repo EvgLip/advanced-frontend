@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ButtonType } from '@shared/ui';
+import { Button, ButtonType } from '@/shared/ui';
 
 
 describe('testButton', function ()

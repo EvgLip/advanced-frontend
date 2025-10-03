@@ -43,9 +43,9 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
 
   moduleNameMapper: {
-    "@shared/(.*)": "<rootDir>/src/shared/$1",
-    "@widgets/(.*)": "<rootDir>/src/widgets/$1",
-    "@app/(.*)": "<rootDir>/src/app/$1",
+    "@/shared/(.*)": "<rootDir>/src/shared/$1",
+    "@/widgets/(.*)": "<rootDir>/src/widgets/$1",
+    "@/app/(.*)": "<rootDir>/src/app/$1",
 
     "\\.s?css$": "identity-obj-proxy",
     // "\\.svg": "<rootDir>config/jest/__mocks__/svg.tsx",

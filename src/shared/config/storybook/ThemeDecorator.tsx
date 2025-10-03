@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import { Theme, ThemeProvider } from '@app/providers/theme-providers';
-import '@app/styles/index.scss';
+import { Theme, ThemeProvider } from '@/app/providers/theme-provider';
+import '@/app/styles/index.scss';
 
 interface ThemeDecoratorProps
 {

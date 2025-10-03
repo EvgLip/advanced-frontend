@@ -1,6 +1,6 @@
-import renderWithRouter from '@shared/lib/tests/renderWithRouter';
 import { fireEvent, screen } from '@testing-library/react';
-import Sidebar from '@widgets/sidebar/ui/sidebar/Sidebar';
+import renderWithRouter from '@/shared/lib/tests/renderWithRouter';
+import Sidebar from '@/widgets/sidebar/ui/sidebar/Sidebar';
 
 
 describe('test Sidebar', function ()

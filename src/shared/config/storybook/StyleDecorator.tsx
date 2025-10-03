@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import '@app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 interface StyleDecoratorProps
 {

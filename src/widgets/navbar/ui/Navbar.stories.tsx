@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { ComponentProps } from 'react';
 
-import { Navbar } from '@widgets/navbar';
-import { ThemeList } from '@app/providers/theme-providers';
-import RouterDecorator from '@shared/config/storybook/RouterDecorator';
-
-type NavbarWithModal = ComponentProps<typeof Navbar> & { modal?: string; };
+import { Navbar } from '@/widgets/navbar';
+import { ThemeList } from '@/app/providers/theme-provider';
+import RouterDecorator from '@/shared/config/storybook/RouterDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

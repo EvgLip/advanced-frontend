@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import { Navbar } from '@widgets/navbar';
-import { Sidebar } from '@widgets/sidebar';
+import { Navbar } from '@/widgets/navbar';
+import { Sidebar } from '@/widgets/sidebar';
 
 export default function RootLayout()
 {

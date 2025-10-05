@@ -61,3 +61,8 @@ declare module '*.module.styl' {
   const classes: { [key: string]: string; };
   export default classes;
 }
+
+//частичный тип
+type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>;
+} : T;

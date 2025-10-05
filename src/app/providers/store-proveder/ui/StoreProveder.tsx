@@ -7,14 +7,14 @@ import { IStateSheme } from '../config/stateSheme';
 interface StoreProviderProps
 {
   children: ReactNode;
-  initialState?: IStateSheme;
+  initialState?: DeepPartial<IStateSheme>;
 }
 
 export default function StoreProvider(props: StoreProviderProps)
 {
   const { children, initialState } = props;
 
-  const store = createReduxStore(initialState);
+  const store = createReduxStore(initialState as IStateSheme);
 
   return (
     <Provider store={store}>

@@ -1,14 +1,11 @@
-//почему то не работает импорт
-//он разрешается в 
-// import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from '@/entities/counter';
 import { combineReducers, configureStore } from '../../../../../node_modules/@reduxjs/toolkit';
 
+import { counterReducer } from '@/entities/counter';
 import { IStateSheme } from './stateSheme';
 
 const rootReducer = combineReducers(
   {
-    counter: counterReducer
+    counter: counterReducer,
   }
 );
 

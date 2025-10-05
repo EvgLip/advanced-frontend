@@ -1,11 +1,15 @@
-import { useDispatch } from 'react-redux';
-
 import { Button } from '@/shared/ui';
 import { counterActions } from '../model/slice/counterSlice';
+import { useAppDispatch, useAppSelector } from '@/app/providers/store-proveder';
+import { selectCounterValue } from '../model/selectors/selectCounteValue/selectCounterValue';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import classes from './Counter.module.scss';
 
 export default function Counter()
 {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+
+  const counterValue = useAppSelector(selectCounterValue);
 
   const increment = () => { dispatch(counterActions.increment()); };
   const decrement = () => { dispatch(counterActions.decrement()); };
@@ -13,14 +17,14 @@ export default function Counter()
   return (
     <div>
       <h1>
-        {'value'}
+        {counterValue}
       </h1>
-      <Button onClick={increment}>
+      <Button className={classes.btninverted} onClick={increment} >
         {'increment'}
       </Button>
-      <Button onClick={decrement}>
+      <Button className={classes.btninverted} onClick={decrement}>
         {'decrement'}
       </Button>
-    </div>
+    </div >
   );
 }

@@ -20,7 +20,7 @@ export function createReduxStore(initialState?: IStateSheme)
   );
 }
 
-export const store = configureStore<IStateSheme>(
+export const store = configureStore(
   {
     reducer:
     {
@@ -30,7 +30,5 @@ export const store = configureStore<IStateSheme>(
   }
 );
 
-//Выведим типы "rootState" и "AppDispatch" из самого хранилища
 export type RootState = ReturnType<typeof store.getState>;
-//Предполагаемый тип:
 export type AppDispatch = typeof store.dispatch;

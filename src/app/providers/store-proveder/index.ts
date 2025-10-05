@@ -1,5 +1,7 @@
 import StoreProvider from './ui/StoreProveder';
-import { store, createReduxStore, RootState, AppDispatch } from './config/store';
+import { store, createReduxStore, RootState } from './config/store';
+import { useAppDispatch, useAppSelector } from './config/hooks';
+import { IStateSheme } from './config/stateSheme';
 
 
 export
@@ -8,5 +10,7 @@ export
   createReduxStore,
   store,
   RootState,
-  AppDispatch,
+  useAppDispatch,
+  useAppSelector,
+  IStateSheme,
 };

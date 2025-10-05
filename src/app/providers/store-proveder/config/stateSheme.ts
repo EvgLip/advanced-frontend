@@ -1,6 +1,6 @@
-import { ICounterSheme } from '@/entities/counter';
+import { ICounterState } from '@/entities/counter';
 
 export interface IStateSheme
 {
-  counter: ICounterSheme;
+  counter: ICounterState;
 }

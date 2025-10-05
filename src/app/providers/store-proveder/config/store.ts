@@ -2,33 +2,28 @@
 //он разрешается в 
 // import { configureStore } from '@reduxjs/toolkit';
 import { counterReducer } from '@/entities/counter';
-import { configureStore } from '../../../../../node_modules/@reduxjs/toolkit';
+import { combineReducers, configureStore } from '../../../../../node_modules/@reduxjs/toolkit';
 
 import { IStateSheme } from './stateSheme';
+
+const rootReducer = combineReducers(
+  {
+    counter: counterReducer
+  }
+);
 
 
 export function createReduxStore(initialState?: IStateSheme)
 {
   return configureStore<IStateSheme>(
     {
-      reducer:
-      {
-        counter: counterReducer,
-      },
+      reducer: rootReducer,
       devTools: __IS_DEV__,
     }
   );
 }
 
-export const store = configureStore(
-  {
-    reducer:
-    {
-      counter: counterReducer,
-    },
-    devTools: __IS_DEV__,
-  }
-);
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof createReduxStore>;
+export type AppDispatch = AppStore['dispatch'];

@@ -15,6 +15,7 @@ export function createReduxStore(initialState?: IStateSheme)
   return configureStore<IStateSheme>(
     {
       reducer: rootReducer,
+      preloadedState: initialState,
       devTools: __IS_DEV__,
     }
   );

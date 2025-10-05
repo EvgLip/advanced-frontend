@@ -1,10 +1,10 @@
 import { RouterProvider } from 'react-router-dom';
-import { AppRouter } from '@app/providers/router';
+import { AppRouter } from '@/app/providers/router';
 
-import { classNames } from '@shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import './styles/index.scss';
-import { useTheme } from './providers/ThemeProviders';
+import { useTheme } from './providers/theme-provider';
 
 
 export default function App()

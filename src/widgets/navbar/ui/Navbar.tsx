@@ -1,10 +1,11 @@
-import { classNames } from '@shared/lib/classNames/classNames';
+import { useState } from 'react';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Modal } from '@/shared/ui';
+import { useTranslation } from 'react-i18next';
+import { Button, ButtonType } from '@/shared/ui';
 
 import styles from './Navbar.module.scss';
-import { Modal } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonType } from '@shared/ui';
-import { useState } from 'react';
 
 interface NavbarProps
 {

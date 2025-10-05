@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/react-webpack5';
 
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator';
-import { ThemeList } from '../../src/app/providers/ThemeProviders';
+import { ThemeList } from '../../src/app/providers/theme-provider';
 
 
 const preview: Preview =

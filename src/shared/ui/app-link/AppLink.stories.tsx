@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import { AppLink, LinkThemeList } from '@shared/ui/';
-import { ThemeList } from '@app/providers/ThemeProviders';
-import RouterDecorator from '@shared/config/storybook/RouterDecorator';
-import ThemeDecorator from '@shared/config/storybook/ThemeDecorator';
+import { AppLink, LinkThemeList } from '@/shared/ui/';
+import { ThemeList } from '@/app/providers/theme-provider';
+import RouterDecorator from '@/shared/config/storybook/RouterDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

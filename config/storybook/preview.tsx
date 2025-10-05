@@ -19,6 +19,7 @@ const preview: Preview =
     },
     theme: ThemeList.LIGHT,
   },
+
   decorators:
     [
       (Story) =>

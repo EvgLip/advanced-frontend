@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import '@app/styles/index.scss';
+// import '@app/styles/index.scss';
 
 interface RouterDecoratorProps
 {

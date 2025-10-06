@@ -2,8 +2,8 @@ import { createContext } from 'react';
 
 export const ThemeList =
   {
-    LIGHT: 'light',
-    DARK: 'dark',
+    LIGHT: 'app_light_theme',
+    DARK: 'app_dark_theme',
   } as const;
 export type Theme = (typeof ThemeList)[keyof typeof ThemeList];
 

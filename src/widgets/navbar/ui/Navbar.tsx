@@ -15,7 +15,7 @@ interface NavbarProps
 export function Navbar({ className }: NavbarProps)
 {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation('translation');
 
   const closeHanler = () => setIsAuthOpen(false);
 
@@ -26,8 +26,9 @@ export function Navbar({ className }: NavbarProps)
         appearance={ButtonType.OUTLINE}
         onClick={() => setIsAuthOpen(true)}
       >
-        {t('Войти')}
+        {t('войти')}
       </Button>
+
       <Modal
         isOpen={isAuthOpen}
         onClose={closeHanler}

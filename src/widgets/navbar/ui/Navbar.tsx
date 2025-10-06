@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonType } from '@/shared/ui';
 
 import styles from './Navbar.module.scss';
+import { LoginModal } from '@/features/auth-by-username';
 
 interface NavbarProps
 {
@@ -29,12 +30,10 @@ export function Navbar({ className }: NavbarProps)
         {t('войти')}
       </Button>
 
-      <Modal
+      <LoginModal
         isOpen={isAuthOpen}
         onClose={closeHanler}
-      >
-        {'Форма входа/регистрации'}
-      </Modal>
+      />
     </nav>
   );
 }

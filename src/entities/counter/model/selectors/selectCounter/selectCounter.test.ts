@@ -1,4 +1,4 @@
-import { IStateSheme } from '@/app/providers/store-proveder';
+import { StateSheme } from '@/app/providers/store-proveder';
 import { selectCounter } from './selectCounter';
 
 describe(
@@ -9,8 +9,8 @@ describe(
       'must return the counter object',
       function ()
       {
-        const state: DeepPartial<IStateSheme> = { counter: { value: 10 } };
-        expect(selectCounter(state as IStateSheme)).toEqual({ value: 10 });
+        const state: DeepPartial<StateSheme> = { counter: { value: 10 } };
+        expect(selectCounter(state as StateSheme)).toEqual({ value: 10 });
       }
     );
   }

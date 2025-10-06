@@ -1,18 +1,20 @@
 import { combineReducers, configureStore } from '../../../../../node_modules/@reduxjs/toolkit';
 
 import { counterReducer } from '@/entities/counter';
-import { IStateSheme } from './stateSheme';
+import { StateSheme } from './stateSheme';
+import { userReducer } from '@/entities/user';
 
 const rootReducer = combineReducers(
   {
     counter: counterReducer,
+    user: userReducer,
   }
 );
 
 
-export function createReduxStore(initialState?: IStateSheme)
+export function createReduxStore(initialState?: StateSheme)
 {
-  return configureStore<IStateSheme>(
+  return configureStore<StateSheme>(
     {
       reducer: rootReducer,
       preloadedState: initialState,

@@ -1,8 +1,8 @@
 import { createSlice } from '../../../../../node_modules/@reduxjs/toolkit';
 
-import { ICounterState } from '../type/counterState';
+import { CounterState } from '../type/counterState';
 
-const initialState: ICounterState =
+const initialState: CounterState =
 {
   value: 0,
 };
@@ -24,4 +24,4 @@ export const counterSlice = createSlice({
 
 export const { actions: counterActions } = counterSlice;
 
-export const counterReducer = counterSlice.reducer;
+export const { reducer: counterReducer } = counterSlice;

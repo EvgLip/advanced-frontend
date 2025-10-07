@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Modal } from '@/shared/ui';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonType } from '@/shared/ui';
 
@@ -15,24 +14,25 @@ interface NavbarProps
 
 export function Navbar({ className }: NavbarProps)
 {
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isAuthOpenModal, setIsAuthOpenModal] = useState(false);
   const { t } = useTranslation('translation');
 
-  const closeHanler = () => setIsAuthOpen(false);
+  const openModalHandler = () => setIsAuthOpenModal(true);
+  const closeModalHanler = () => setIsAuthOpenModal(false);
 
   return (
     <nav className={classNames(styles.navbar, {}, ['navbar', className])}>
       <Button
         className={styles.links}
         appearance={ButtonType.OUTLINE}
-        onClick={() => setIsAuthOpen(true)}
+        onClick={openModalHandler}
       >
         {t('войти')}
       </Button>
 
       <LoginModal
-        isOpen={isAuthOpen}
-        onClose={closeHanler}
+        isOpen={isAuthOpenModal}
+        onClose={closeModalHanler}
       />
     </nav>
   );

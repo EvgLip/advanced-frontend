@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui';
+import { Button, Input } from '@/shared/ui';
 
 import classes from './LoginForm.module.scss';
 
@@ -17,9 +17,16 @@ export default function LoginForm(props: LoginFormProps)
 
   return (
     <form className={classNames(classes.loginform, {}, [className])}>
-      <input type='text' />
-      <input type='text' />
-      <Button>
+      <Input
+        placeholder={t('имя пользователя')}
+        autofocus
+      />
+
+      <Input
+        placeholder={t('пароль')}
+      />
+
+      <Button className={classes.loginbtn}>
         {t('войти')}
       </Button>
     </form>

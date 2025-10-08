@@ -24,7 +24,7 @@ export function Navbar({ className }: NavbarProps)
     <nav className={classNames(styles.navbar, {}, ['navbar', className])}>
       <Button
         className={styles.links}
-        appearance={ButtonType.OUTLINE}
+        appearance={ButtonType.CLEAR}
         onClick={openModalHandler}
       >
         {t('войти')}

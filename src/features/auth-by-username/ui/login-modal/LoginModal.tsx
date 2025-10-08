@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Modal } from '@/shared/ui';
 
 import LoginForm from '../login-form/LoginForm';
-import classes from './LoginModal.module.scss';
+// import classes from './LoginModal.module.scss';
 
 interface LoginModalProps
 {
@@ -17,7 +17,7 @@ export default function LoginModal(props: LoginModalProps)
 
   return (
     <Modal
-      className={classNames(classes.loginmodal, {}, [className])}
+      className={classNames('', {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       lazy

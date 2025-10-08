@@ -5,6 +5,7 @@ import classes from './Button.module.scss';
 
 export const ButtonTypeList =
   {
+    PRIMARY: 'primary',
     CLEAR: 'clear',
     OUTLINE: 'outline',
     BACKGROUND: 'background',
@@ -36,7 +37,7 @@ export default function Button(props: ButtonProps)
   const {
     className,
     children,
-    appearance,
+    appearance = ButtonTypeList.PRIMARY,
     square = false,
     size,
     ...otherProps

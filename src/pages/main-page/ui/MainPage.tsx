@@ -13,11 +13,6 @@ export default function MainPage()
   return (
     <div>
       {t('Главная')}
-      <Input
-        placeholder='Введите текст'
-        value={inputValue}
-        onChange={changeHandler}
-      />
     </div>
   );
 }

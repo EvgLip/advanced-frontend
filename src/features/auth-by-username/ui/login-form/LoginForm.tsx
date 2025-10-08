@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, Input } from '@/shared/ui';
@@ -15,6 +17,11 @@ export default function LoginForm(props: LoginFormProps)
 
   const { t } = useTranslation();
 
+  function loginHandler(e: MouseEvent<HTMLButtonElement>)
+  {
+    e.preventDefault();
+  };
+
   return (
     <form className={classNames(classes.loginform, {}, [className])}>
       <Input
@@ -26,7 +33,10 @@ export default function LoginForm(props: LoginFormProps)
         placeholder={t('пароль')}
       />
 
-      <Button className={classes.loginbtn}>
+      <Button
+        className={classes.loginbtn}
+        onClick={loginHandler}
+      >
         {t('войти')}
       </Button>
     </form>

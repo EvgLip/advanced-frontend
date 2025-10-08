@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useState } from 'react';
+import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
 
 import classes from './Input.module.scss';
 
@@ -13,6 +13,8 @@ interface InputProps extends HTMLInputProps
   type?: string;
   autofocus?: boolean;
 }
+
+
 export const Input = memo(function Input(props: InputProps)
 {
   const
@@ -28,10 +30,15 @@ export const Input = memo(function Input(props: InputProps)
 
   const [isFocus, setIsFocus] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
+  const ref = useRef<HTMLInputElement>(null);
 
   useEffect(function ()
   {
-    if (autofocus) setIsFocus(true);
+    if (autofocus) 
+    {
+      setIsFocus(true);
+      ref.current?.focus();
+    }
   }, [autofocus]);
 
   const onFocusHandler = () => setIsFocus(true);
@@ -54,6 +61,7 @@ export const Input = memo(function Input(props: InputProps)
 
       <div className={classes.caretwrapper}>
         <input
+          ref={ref}
           className={classes.input}
           type={type}
           value={value}

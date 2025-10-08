@@ -20,6 +20,7 @@ export default function LoginModal(props: LoginModalProps)
       className={classNames(classes.loginmodal, {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
+      lazy
     >
       <LoginForm />
     </Modal>

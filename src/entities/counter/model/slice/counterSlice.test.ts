@@ -1,5 +1,5 @@
 import { counterActions, counterReducer } from './counterSlice';
-import { ICounterState } from '../type/counterState';
+import { CounterState } from '../type/counterState';
 
 describe(
   'counterSlice',
@@ -9,7 +9,7 @@ describe(
       'increment',
       function ()
       {
-        const state: ICounterState = { value: 10 };
+        const state: CounterState = { value: 10 };
         expect(counterReducer(state, counterActions.increment())).toEqual({ value: 11 });
       }
     );
@@ -17,7 +17,7 @@ describe(
       'decrement',
       function ()
       {
-        const state: ICounterState = { value: 10 };
+        const state: CounterState = { value: 10 };
         expect(counterReducer(state, counterActions.decrement())).toEqual({ value: 9 });
       }
     );

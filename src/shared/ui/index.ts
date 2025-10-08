@@ -7,6 +7,7 @@ import Button,
 import Loader from './loader/Loader';
 import Portal from './portal/Portal';
 import Modal from './modal/Modal';
+import { Input } from './input/Input';
 
 export
 {
@@ -18,4 +19,5 @@ export
   Loader,
   Portal,
   Modal,
+  Input,
 };

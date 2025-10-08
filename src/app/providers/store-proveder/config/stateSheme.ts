@@ -1,6 +1,8 @@
-import { ICounterState } from '@/entities/counter';
+import { CounterState } from '@/entities/counter';
+import { UserState } from '@/entities/user';
 
-export interface IStateSheme
+export interface StateSheme
 {
-  counter: ICounterState;
+  counter: CounterState;
+  user: UserState;
 }

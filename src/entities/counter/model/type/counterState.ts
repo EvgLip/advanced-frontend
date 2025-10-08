@@ -1,4 +1,4 @@
-export interface ICounterState
+export interface CounterState
 {
   value: number;
 }

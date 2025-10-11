@@ -18,6 +18,7 @@ const preview: Preview =
       },
     },
     theme: ThemeList.LIGHT,
+    disabled: false,
   },
 
   decorators:
@@ -38,6 +39,14 @@ const preview: Preview =
           <ThemeDecorator theme={theme}>
             <Story />
           </ThemeDecorator>
+        );
+      },
+      //не работает
+      (Story, { parameters }) =>
+      {
+        const { disabled = false } = parameters;
+        return (
+          <Story disabled={disabled} />
         );
       },
     ],

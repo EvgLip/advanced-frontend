@@ -72,3 +72,10 @@
 .sizexl {
     font: var(--font-xl);
   }
+
+.button:disabled,
+.button[disabled] {
+  color:var(--secondary-color);
+  opacity: 0.5;
+  background: transparent;
+}

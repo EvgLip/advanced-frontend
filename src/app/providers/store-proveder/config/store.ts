@@ -2,7 +2,8 @@ import { combineReducers, configureStore } from '../../../../../node_modules/@re
 
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';
-import { loginReducer } from '@/features/auth-by-username';
+// import { loginReducer } from '@/features/auth-by-username';
+import { loginReducer } from '../../../../features/auth-by-username/model/slice/loginSlice';
 
 const rootReducer = combineReducers(
   {

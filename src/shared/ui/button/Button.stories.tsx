@@ -27,6 +27,11 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
+    appearance:
+    {
+      options: [ButtonType.PRIMARY, ButtonType.OUTLINE, ButtonType.CLEAR, ButtonType.BACKGROUND_INVERTED, ButtonType.BACKGROUND],
+      control: { type: 'radio' }
+    }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -138,5 +143,16 @@ export const SquareXL: Story = {
     square: true,
     size: ButtonSize.XL,
   },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: 'Disabled',
+    appearance: ButtonType.OUTLINE,
+  },
+  parameters:
+  {
+    disabled: true,
+  }
 };
 

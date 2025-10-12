@@ -1,13 +1,21 @@
-import { createSlice } from '../../../../../node_modules/@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '../../../../../node_modules/@reduxjs/toolkit';
 
-import { UserState } from '../type/userState';
+import { UserState, User } from '../type/userState';
 
 const initialState: UserState = {};
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setAuthData(state, action: PayloadAction<User>)
+    {
+      console.log('action.payload', action.payload);
+      console.log('state.authData', state.authData);
+      state.authData = action.payload;
+      console.log('state.authData', state.authData);
+    }
+  },
 });
 
 export const { actions: userActions } = userSlice;

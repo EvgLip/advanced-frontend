@@ -2,7 +2,7 @@ import { memo, MouseEvent, useCallback } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, Input, Loader } from '@/shared/ui';
+import { Button, Input, Text, TextThemeList } from '@/shared/ui';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store-proveder';
 
 import { loginActions } from '../../model/slice/loginSlice';
@@ -45,7 +45,9 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps)
 
   return (
     <form className={classNames(classes.loginform, {}, [className])}>
-      {error && <div>{error}</div>}
+      <Text
+        title={t('форма авторизации')}
+      />
       <Input
         placeholder={t('имя пользователя')}
         autofocus
@@ -59,13 +61,22 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps)
         value={password}
       />
 
-      <Button
-        className={classes.loginbtn}
-        onClick={loginHandler}
-        disabled={isLoading}
-      >
-        {t('войти')}
-      </Button>
+      <div className={classes.controls}>
+        {error &&
+          <Text
+            text={error}
+            theme={TextThemeList.ERROR}
+          />
+        }
+        <Button
+          className={classes.loginbtn}
+          onClick={loginHandler}
+          disabled={isLoading}
+        >
+          {t('войти')}
+        </Button>
+      </div>
+
     </form>
   );
 });

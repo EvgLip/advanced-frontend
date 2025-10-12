@@ -16,6 +16,7 @@ const rootReducer = combineReducers(
 
 export function createReduxStore(initialState?: RootState)
 {
+
   return configureStore<RootState>(
     {
       reducer: rootReducer,

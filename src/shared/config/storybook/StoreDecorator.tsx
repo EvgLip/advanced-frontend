@@ -1,17 +1,18 @@
 import { ReactNode } from 'react';
-import { StoreProvider } from '@/app/providers/store-proveder';
+import { RootState, StoreProvider } from '@/app/providers/store-proveder';
 
 interface StoryDecoratorProps
 {
   children: ReactNode;
+  initialState?: DeepPartial<RootState>;
 }
 
-export default function StoreDecorator(props: StoryDecoratorProps) 
+export default function StoreDecorator(props: StoryDecoratorProps)
 {
-  const { children } = props;
+  const { children, initialState } = props;
 
   return (
-    <StoreProvider >
+    <StoreProvider initialState={initialState}>
       {children}
     </StoreProvider >
   );

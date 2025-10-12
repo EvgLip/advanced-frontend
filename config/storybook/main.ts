@@ -1,3 +1,4 @@
+import { DefinePlugin } from 'webpack';
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import buildCssLoader from '../build/loaders/buildCssLoader';
@@ -21,11 +22,15 @@ const config: StorybookConfig =
   },
   webpackFinal: async (config) =>
   {
-    // const srcPath = path.resolve(__dirname, "../../src");
+    if (!config.plugins) config.plugins = [];
 
-    // config.resolve?.modules?.push(srcPath);
-    // config.resolve?.extensions?.push('.tsx', '.ts');
-    // config.resolve!.alias!['@*'] = `${srcPath}/*`;
+    config.plugins = [...(config.plugins || [])];
+    config.plugins.push(
+      new DefinePlugin(
+        {
+          __IS_DEV__: process.env.NODE_ENV === 'development',
+        })
+    );
 
     if (!config.resolve) config.resolve = {};
 
@@ -40,7 +45,6 @@ const config: StorybookConfig =
       ...(config.module.rules || []),
     ];
     config.module.rules.push(buildCssLoader(true));
-
 
     //работа с svg
     config.module.rules = config.module.rules.map((rule) =>

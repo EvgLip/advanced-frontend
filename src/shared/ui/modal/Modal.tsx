@@ -12,7 +12,7 @@ interface ModalProps
   lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 250;
+const ANIMATION_DELAY = 290;
 
 export default function Modal(props: ModalProps)
 {
@@ -40,6 +40,7 @@ export default function Modal(props: ModalProps)
       setIsClosing(true);
       timerRef.current = setTimeout(() =>
       {
+        console.log('modal');
         onClose();
         setIsClosing(false);
       },
@@ -74,7 +75,7 @@ export default function Modal(props: ModalProps)
 
   return (
     <Portal parent={document.getElementById('modal')}>
-      < div className={classNames(classes.modal, mods, [className])} >
+      <div className={classNames(classes.modal, mods, [className])} >
         <div className={classes.overlay} onClick={closeHandler}>
           <div className={classes.content} onClick={contentClickHandler}>
             {children}

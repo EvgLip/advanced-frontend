@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Navbar } from './Navbar';
 import { ThemeList } from '@/app/providers/theme-provider';
 import RouterDecorator from '@/shared/config/storybook/RouterDecorator';
+import StoreDecorator from '@/shared/config/storybook/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -10,6 +11,15 @@ const meta = {
   component: Navbar,
   decorators:
     [
+      (Story) =>
+      {
+        return (
+          <StoreDecorator initialState={{ user: { authData: { id: '1', username: 'username', } } }}>
+            <Story />
+          </StoreDecorator>
+        );
+      },
+
       (Story) =>
       {
         return (

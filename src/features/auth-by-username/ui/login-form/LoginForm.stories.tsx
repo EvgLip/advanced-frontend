@@ -3,12 +3,21 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@/app/providers/theme-provider';
 import LoginForm from '@/features/auth-by-username/ui/login-form/LoginForm';
+import StoreDecorator from '@/shared/config/storybook/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'reatures/LoginForm',
   component: LoginForm,
   decorators: [
+    (Story) =>
+    {
+      return (
+        <StoreDecorator initialState={{ login: { username: 'username', password: '123' } }} >
+          <Story />
+        </StoreDecorator >
+      );
+    },
     (Story) =>
     {
       return (
@@ -26,6 +35,7 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
+
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {},
@@ -44,4 +54,30 @@ export const Dark: Story = {
   parameters: {
     theme: ThemeList.DARK,
   },
+};
+
+export const Error: Story = {
+  args: {},
+  decorators: [
+    (Story) =>
+    {
+      return (
+        <StoreDecorator initialState={{ login: { username: 'username', password: '123', error: 'Сообщение об ошибке' } }} >
+          <Story />
+        </StoreDecorator >
+      );
+    },]
+};
+
+export const Loading: Story = {
+  args: {},
+  decorators: [
+    (Story) =>
+    {
+      return (
+        <StoreDecorator initialState={{ login: { username: 'username', password: '123', isLoading: true } }} >
+          <Story />
+        </StoreDecorator >
+      );
+    },]
 };

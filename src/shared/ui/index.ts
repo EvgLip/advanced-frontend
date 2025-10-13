@@ -7,7 +7,8 @@ import Button,
 import Loader from './loader/Loader';
 import Portal from './portal/Portal';
 import Modal from './modal/Modal';
-import { Input } from './input/Input';
+import Input from './input/Input';
+import Text, { TextThemeList } from './text/Text';
 
 export
 {
@@ -20,4 +21,6 @@ export
   Portal,
   Modal,
   Input,
+  Text,
+  TextThemeList,
 };

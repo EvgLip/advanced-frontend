@@ -15,7 +15,7 @@ interface InputProps extends HTMLInputProps
 }
 
 
-export const Input = memo(function Input(props: InputProps)
+const Input = memo(function Input(props: InputProps)
 {
   const
     {
@@ -81,3 +81,5 @@ export const Input = memo(function Input(props: InputProps)
     </div>
   );
 });
+
+export default Input;

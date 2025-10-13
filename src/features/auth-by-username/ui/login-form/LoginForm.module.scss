@@ -5,6 +5,15 @@
   width: 50rem;
 }
 
+.controls {
+  display: flex;
+  justify-content:space-between;
+}
+
+.message {
+  flex-grow: 1;
+}
+
 .loginbtn {
   margin-left: auto;
 }

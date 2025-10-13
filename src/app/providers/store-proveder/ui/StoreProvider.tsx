@@ -1,20 +1,19 @@
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
-import { createReduxStore } from '../config/store';
-import { StateSheme } from '../config/stateSheme';
+import { createReduxStore, RootState } from '../config/store';
 
 interface StoreProviderProps
 {
   children: ReactNode;
-  initialState?: DeepPartial<StateSheme>;
+  initialState?: DeepPartial<RootState>;
 }
 
 export default function StoreProvider(props: StoreProviderProps)
 {
   const { children, initialState } = props;
 
-  const store = createReduxStore(initialState as StateSheme);
+  const store = createReduxStore(initialState as RootState);
 
   return (
     <Provider store={store}>

@@ -3,6 +3,9 @@
   "сокращенный язык": "Ru",
   "скрыть": "Hide",
   "войти": "Login",
+  "выйти": "Logout",
   "пароль": "Password",
-  "имя пользователя": "Username"
+  "имя пользователя": "Username",
+  "форма авторизации": "Authorization form",
+  "неверный логин или пароль": "Invalid username or password"
 }

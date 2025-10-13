@@ -19,7 +19,6 @@ const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectVal
 
       if (!response.data) throw new Error();
 
-      console.log('response.data', response.data);
       thunkAPI.dispatch(userActions.setAuthData(response.data));
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
       return response.data;

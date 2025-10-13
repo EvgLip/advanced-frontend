@@ -1,5 +1,6 @@
 import { userReducer, userActions } from './model/slice/userSlice';
 import { User, UserState } from './model/type/userState';
+import selectUserAuthData from './model/selectors/selectUserAuthData';
 
 export
 {
@@ -7,4 +8,5 @@ export
   userActions,
   User,
   UserState,
+  selectUserAuthData,
 };

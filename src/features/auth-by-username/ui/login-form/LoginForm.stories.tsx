@@ -55,3 +55,29 @@ export const Dark: Story = {
     theme: ThemeList.DARK,
   },
 };
+
+export const Error: Story = {
+  args: {},
+  decorators: [
+    (Story) =>
+    {
+      return (
+        <StoreDecorator initialState={{ login: { username: 'username', password: '123', error: 'Сообщение об ошибке' } }} >
+          <Story />
+        </StoreDecorator >
+      );
+    },]
+};
+
+export const Loading: Story = {
+  args: {},
+  decorators: [
+    (Story) =>
+    {
+      return (
+        <StoreDecorator initialState={{ login: { username: 'username', password: '123', isLoading: true } }} >
+          <Story />
+        </StoreDecorator >
+      );
+    },]
+};

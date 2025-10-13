@@ -40,6 +40,7 @@ export default function Modal(props: ModalProps)
       setIsClosing(true);
       timerRef.current = setTimeout(() =>
       {
+        console.log('modal');
         onClose();
         setIsClosing(false);
       },

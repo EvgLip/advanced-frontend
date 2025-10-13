@@ -36,3 +36,5 @@ chromatic-diagnostics.json
 
 *storybook.log
 storybook-static
+
+extractedTranslations/*

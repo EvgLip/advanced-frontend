@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { RootState, StoreProvider } from '@/app/providers/store-proveder';
+import { RootState, StoreProvider } from '@/app/providers/store-provider';
 
 export interface ComponentRenderOption
 {

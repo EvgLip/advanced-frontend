@@ -3,7 +3,7 @@ import { memo, MouseEvent, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, Text, TextThemeList } from '@/shared/ui';
-import { useAppDispatch, useAppSelector } from '@/app/providers/store-proveder';
+import { useAppDispatch, useAppSelector } from '@/app/providers/store-provider';
 
 import { loginActions } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';

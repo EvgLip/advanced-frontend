@@ -1,4 +1,4 @@
-import { RootState } from '@/app/providers/store-proveder';
+import { RootState } from '@/app/providers/store-provider';
 import { selectCounterValue } from './selectCounterValue';
 
 describe(

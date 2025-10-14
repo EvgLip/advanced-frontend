@@ -1,3 +1,3 @@
-import { RootState } from '@/app/providers/store-proveder';
+import { RootState } from '@/app/providers/store-provider';
 
 export const selectCounter = (state: RootState) => state.counter; 

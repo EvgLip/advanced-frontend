@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import './styles/index.scss';
 import { useTheme } from './providers/theme-provider';
-import { useAppDispatch } from '@/app/providers/store-proveder';
+import { useAppDispatch } from '@/app/providers/store-provider';
 import { useEffect } from 'react';
 import { userActions } from '@/entities/user';
 

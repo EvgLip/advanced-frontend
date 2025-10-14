@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { RootState, StoreProvider } from '@/app/providers/store-proveder';
+import { RootState, StoreProvider } from '@/app/providers/store-provider';
 
 interface StoryDecoratorProps
 {

@@ -6,7 +6,7 @@ import { Button, ButtonType } from '@/shared/ui';
 
 import styles from './Navbar.module.scss';
 import { LoginModal } from '@/features/auth-by-username';
-import { useAppDispatch, useAppSelector } from '@/app/providers/store-proveder';
+import { useAppDispatch, useAppSelector } from '@/app/providers/store-provider';
 import { selectUserAuthData, userActions } from '@/entities/user';
 
 interface NavbarProps

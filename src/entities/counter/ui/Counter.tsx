@@ -1,6 +1,6 @@
 import { Button } from '@/shared/ui';
 import { counterActions } from '../model/slice/counterSlice';
-import { useAppDispatch, useAppSelector } from '@/app/providers/store-proveder';
+import { useAppDispatch, useAppSelector } from '@/app/providers/store-provider';
 import { selectCounterValue } from '../model/selectors/selectCounteValue/selectCounterValue';
 import classes from './Counter.module.scss';
 

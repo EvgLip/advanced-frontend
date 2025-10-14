@@ -1,4 +1,4 @@
-import { RootState } from '@/app/providers/store-proveder';
+import { RootState } from '@/app/providers/store-provider';
 
 export default function selectUserAuthData(state: RootState)
 {

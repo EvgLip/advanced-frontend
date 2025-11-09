@@ -10,7 +10,7 @@ import classes from './LoginForm.module.scss';
 import { selectLoginState } from '../../model/selectors/selectLoginState/selectLoginState';
 import loginByUsername from '../../model/services/login-by-username/loginByUsername';
 
-interface LoginFormProps 
+export interface LoginFormProps 
 {
   className?: string;
 }

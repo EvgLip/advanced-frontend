@@ -1,7 +1,8 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Modal } from '@/shared/ui';
+import { Suspense } from 'react';
 
-import LoginForm from '../login-form/LoginForm';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader, Modal } from '@/shared/ui';
+import { LoginFormLazy } from '../login-form/LoginFormLazy';
 // import classes from './LoginModal.module.scss';
 
 interface LoginModalProps
@@ -22,7 +23,9 @@ export default function LoginModal(props: LoginModalProps)
       onClose={onClose}
       lazy
     >
-      <LoginForm />
+      <Suspense fallback={<Loader />}>
+        <LoginFormLazy />
+      </Suspense>
     </Modal>
   );
 }

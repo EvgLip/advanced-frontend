@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
-import { createReduxStore, RootState } from '../config/store';
+import { createReduxStore } from '../config/store';
+import { RootState } from '../config/rootState';
 
 interface StoreProviderProps
 {

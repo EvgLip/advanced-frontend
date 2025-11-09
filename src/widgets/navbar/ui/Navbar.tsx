@@ -32,9 +32,6 @@ export function Navbar({ className }: NavbarProps)
   const closeModalLoginHanler = () => { setIsAuthOpenModal(false); console.log('closeModalLoginHanler'); };
   const logoutHandler = () => dispatch(userActions.logout());
 
-  console.log('authData', authData);
-  console.log('isAuthOpenModal', isAuthOpenModal);
-
   const login = (
     <>
       <Button

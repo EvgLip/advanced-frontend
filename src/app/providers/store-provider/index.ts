@@ -1,5 +1,6 @@
 import StoreProvider from './ui/StoreProvider';
-import { createReduxStore, RootState } from './config/store';
+import { RootState } from './config/rootState';
+import { createReduxStore } from './config/store';
 import { useAppDispatch, useAppSelector } from './config/hooks';
 
 

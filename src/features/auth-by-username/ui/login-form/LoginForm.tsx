@@ -1,26 +1,38 @@
-import { memo, MouseEvent, useCallback } from 'react';
+import { memo, MouseEvent, useCallback, useEffect } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, Input, Text, TextThemeList } from '@/shared/ui';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store-provider';
 
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';
-import { selectLoginState } from '../../model/selectors/selectLoginState/selectLoginState';
 import loginByUsername from '../../model/services/login-by-username/loginByUsername';
+import { selectLoginUsername } from '../../model/selectors/select-login-username/selectLoginUsername';
+import { selectLoginPassword } from '../../model/selectors/select-login-password/selectLoginPassword';
+import { selectLoginLoading } from '../../model/selectors/select-login-loading/selectLoginLoading';
+import { selectLoginError } from '../../model/selectors/select-login-error/selectLoginError';
+import DinamicModuleLoader, { ReducerList } from '@/shared/lib/components/dinamic-module-loader/DinamicModuleLoader';
 
 export interface LoginFormProps 
 {
   className?: string;
 }
 
+const initialReducer: ReducerList =
+{
+  login: loginReducer,
+};
+
 const LoginForm = memo(function LoginForm(props: LoginFormProps)
 {
   const { className } = props;
 
   const dispatch = useAppDispatch();
-  const { username, password, isLoading, error } = useAppSelector(selectLoginState);
+  const username = useAppSelector(selectLoginUsername);
+  const password = useAppSelector(selectLoginPassword);
+  const isLoading = useAppSelector(selectLoginLoading);
+  const error = useAppSelector(selectLoginError);
   const { t } = useTranslation();
 
   const onChangeUsername = useCallback(
@@ -44,40 +56,42 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps)
   }, [dispatch, password, username]);
 
   return (
-    <form className={classNames(classes.loginform, {}, [className])}>
-      <Text
-        title={t('форма авторизации')}
-      />
-      <Input
-        placeholder={t('имя пользователя')}
-        autofocus
-        onChange={onChangeUsername}
-        value={username}
-      />
+    <DinamicModuleLoader reducers={initialReducer} removeAfterUnmount>
+      <form className={classNames(classes.loginform, {}, [className])}>
+        <Text
+          title={t('форма авторизации')}
+        />
+        <Input
+          placeholder={t('имя пользователя')}
+          autofocus
+          onChange={onChangeUsername}
+          value={username}
+        />
 
-      <Input
-        placeholder={t('пароль')}
-        onChange={onChangePassword}
-        value={password}
-      />
+        <Input
+          placeholder={t('пароль')}
+          onChange={onChangePassword}
+          value={password}
+        />
 
-      <div className={classes.controls}>
-        {error &&
-          <Text
-            text={error}
-            theme={TextThemeList.ERROR}
-          />
-        }
-        <Button
-          className={classes.loginbtn}
-          onClick={loginHandler}
-          disabled={isLoading}
-        >
-          {t('войти')}
-        </Button>
-      </div>
+        <div className={classes.controls}>
+          {error &&
+            <Text
+              text={error}
+              theme={TextThemeList.ERROR}
+            />
+          }
+          <Button
+            className={classes.loginbtn}
+            onClick={loginHandler}
+            disabled={isLoading}
+          >
+            {t('войти')}
+          </Button>
+        </div>
 
-    </form>
+      </form>
+    </DinamicModuleLoader>
   );
 });
 

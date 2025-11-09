@@ -1,7 +1,9 @@
-import { RootState, RootStateKey } from './rootState';
 import { combineReducers, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit';
 
-export function createReducerManager(initialReducers: ReducersMapObject<RootState>)
+import { ReducerManager, RootState, RootStateKey } from './rootState';
+
+
+export function createReducerManager(initialReducers: ReducersMapObject<RootState>): ReducerManager
 {
   const reducers = { ...initialReducers };
 

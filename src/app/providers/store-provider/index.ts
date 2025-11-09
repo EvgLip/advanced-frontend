@@ -1,5 +1,5 @@
 import StoreProvider from './ui/StoreProvider';
-import { RootState } from './config/rootState';
+import { RootState, RootStateWithManager, RootStateKey } from './config/rootState';
 import { createReduxStore } from './config/store';
 import { useAppDispatch, useAppSelector } from './config/hooks';
 
@@ -11,4 +11,6 @@ export
   RootState,
   useAppDispatch,
   useAppSelector,
+  RootStateWithManager,
+  RootStateKey,
 };

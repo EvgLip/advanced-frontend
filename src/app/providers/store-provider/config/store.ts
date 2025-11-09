@@ -1,4 +1,4 @@
-import { configureStore, ReducersMapObject } from '../../../../../node_modules/@reduxjs/toolkit';
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';

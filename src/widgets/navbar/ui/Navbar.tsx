@@ -29,7 +29,7 @@ export function Navbar({ className }: NavbarProps)
   );
 
   const openModalLoginHandler = () => setIsAuthOpenModal(true);
-  const closeModalLoginHanler = () => { setIsAuthOpenModal(false); console.log('closeModalLoginHanler'); };
+  const closeModalLoginHanler = () => setIsAuthOpenModal(false);
   const logoutHandler = () => dispatch(userActions.logout());
 
   const login = (
@@ -42,10 +42,12 @@ export function Navbar({ className }: NavbarProps)
         {t('войти')}
       </Button>
 
-      <LoginModal
-        isOpen={isAuthOpenModal}
-        onClose={closeModalLoginHanler}
-      />
+      {
+        isAuthOpenModal && <LoginModal
+          isOpen={isAuthOpenModal}
+          onClose={closeModalLoginHanler}
+        />
+      }
     </>
   );
 

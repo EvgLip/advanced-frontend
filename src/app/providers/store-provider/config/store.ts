@@ -11,14 +11,14 @@ export function createReduxStore(
   asyncReducers?: ReducersMapObject<RootState>
 )
 {
-  const roorReducer: ReducersMapObject<RootState> =
+  const rootReducer: ReducersMapObject<RootState> =
   {
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
   };
 
-  const reducerManager = createReducerManager(roorReducer);
+  const reducerManager = createReducerManager(rootReducer);
 
   const store = configureStore<RootState>
     (

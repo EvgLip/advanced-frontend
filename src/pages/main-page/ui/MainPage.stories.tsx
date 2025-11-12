@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import MainPage from '@/pages/main-page/ui/MainPage';
+import MainPage from './MainPage';
 import { ThemeList } from '@/app/providers/theme-provider';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

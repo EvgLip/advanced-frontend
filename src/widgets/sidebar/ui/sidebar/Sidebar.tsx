@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Button, { ButtonTypeList } from '@/shared/ui/button/Button';
-import { ButtonSize, LinkThemeList } from '@/shared/ui';
-import { AppLink } from '@/shared/ui';
-
 import { ThemeSwitcher } from '@/widgets/theme-switcher';
 import { LanguageSwitcher } from '@/widgets/language-switcher';
+import Button, { ButtonTypeList } from '@/shared/ui/button/Button';
+import { ButtonSize } from '@/shared/ui';
 
-import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
-import HomeIcon from '@/shared/assets/icons/main-20-20.svg';
+import { SidebarItemsList } from '../../model/items';
 
 import classes from './Sidebar.module.scss';
+import SidebarItem from '@/widgets/sidebar/ui/sidebar-item/SidebarItem';
 
 interface SidebarProps
 {
@@ -24,9 +21,6 @@ export default function Sidebar(props: SidebarProps)
 {
   const { className } = props;
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const { t } = useTranslation('translation');
-  const { t: tm } = useTranslation('main-page');
-  const { t: ta } = useTranslation('about');
 
   const onToggle = () => setIsCollapsed(prev => !prev);
 
@@ -48,27 +42,12 @@ export default function Sidebar(props: SidebarProps)
       </Button>
 
       <div className={classes.items}>
-        <AppLink
-          className={classes.item}
-          theme={LinkThemeList.SECONDARY}
-          to='/'
-        >
-          <HomeIcon className={classes.icon} />
-          <span className={classes.link}>
-            {tm(isCollapsed ? '' : 'Главная')}
-          </span>
-        </AppLink>
-
-        <AppLink
-          className={classes.item}
-          theme={LinkThemeList.SECONDARY}
-          to='/about'
-        >
-          <AboutIcon className={classes.icon} />
-          <span className={classes.link}>
-            {ta(isCollapsed ? '' : 'О сайте')}
-          </span>
-        </AppLink>
+        {
+          SidebarItemsList.map(item =>
+          (
+            <SidebarItem item={item} collapsed={isCollapsed} />
+          ))
+        }
       </div>
 
       <div className={classes.switchers}>

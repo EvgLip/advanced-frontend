@@ -9,27 +9,16 @@ export const AppRoutes =
   {
     MAIN: 'main',
     ABOUT: 'about',
+    PROFILE: 'profile'
   } as const;
 
-type TAppRoutes = (typeof AppRoutes)[keyof typeof AppRoutes];
+type AppRoutesType = (typeof AppRoutes)[keyof typeof AppRoutes];
 
-export const RoutePath: Record<TAppRoutes, string> =
+export const RoutePath: Record<AppRoutesType, string> =
 {
   [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about'
+  [AppRoutes.ABOUT]: '/about',
+  [AppRoutes.PROFILE]: '/profile',
 };
 
 
-export const routeConfig: Record<TAppRoutes, RouteProps> =
-{
-  [AppRoutes.MAIN]:
-  {
-    path: RoutePath.main,
-    element: <MainPage />
-  },
-  [AppRoutes.ABOUT]:
-  {
-    path: RoutePath.about,
-    element: <AboutPage />
-  }
-};

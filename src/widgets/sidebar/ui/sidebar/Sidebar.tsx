@@ -45,7 +45,7 @@ export default function Sidebar(props: SidebarProps)
         {
           SidebarItemsList.map(item =>
           (
-            <SidebarItem item={item} collapsed={isCollapsed} />
+            <SidebarItem item={item} key={item.text} collapsed={isCollapsed} />
           ))
         }
       </div>

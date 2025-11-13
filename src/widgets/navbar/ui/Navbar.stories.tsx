@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import { Navbar } from './Navbar';
+import Navbar from './Navbar';
 import { ThemeList } from '@/app/providers/theme-provider';
 import RouterDecorator from '@/shared/config/storybook/RouterDecorator';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator';

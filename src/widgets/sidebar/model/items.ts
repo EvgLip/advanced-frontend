@@ -12,20 +12,21 @@ export interface SidebarItemType
   Icon: FunctionComponent<SVGAttributes<SVGElement>>;
 }
 
-export const SidebarItemsList: SidebarItemType[] = [
-  {
-    path: RoutePath.main,
-    Icon: HomeIcon,
-    text: 'Главная',
-  },
-  {
-    path: RoutePath.about,
-    Icon: AboutIcon,
-    text: 'О сайте',
-  },
-  {
-    path: RoutePath.profile,
-    Icon: ProfileIcon,
-    text: 'Профиль',
-  },
-] as const;
+export const SidebarItemsList: SidebarItemType[] =
+  [
+    {
+      path: RoutePath.main,
+      Icon: HomeIcon,
+      text: 'Главная',
+    },
+    {
+      path: RoutePath.about,
+      Icon: AboutIcon,
+      text: 'О сайте',
+    },
+    {
+      path: RoutePath.profile,
+      Icon: ProfileIcon,
+      text: 'Профиль',
+    },
+  ] as const;

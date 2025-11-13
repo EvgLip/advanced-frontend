@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +14,7 @@ interface NavbarProps
   className?: string;
 }
 
-export function Navbar({ className }: NavbarProps)
+const Navbar = memo(function Navbar({ className }: NavbarProps)
 {
   const [isAuthOpenModal, setIsAuthOpenModal] = useState(false);
   const authData = useAppSelector(selectUserAuthData);
@@ -73,4 +73,6 @@ export function Navbar({ className }: NavbarProps)
       }
     </nav>
   );
-}
+});
+
+export default Navbar;

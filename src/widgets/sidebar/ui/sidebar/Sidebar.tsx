@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ThemeSwitcher } from '@/widgets/theme-switcher';
@@ -17,12 +17,18 @@ interface SidebarProps
 }
 
 //коментарий для проверки ci на pull request
-export default function Sidebar(props: SidebarProps)
+const Sidebar = memo(function Sidebar(props: SidebarProps)
 {
   const { className } = props;
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [test, setTest] = useState(0);
 
   const onToggle = () => setIsCollapsed(prev => !prev);
+
+  const itemsList = useMemo(() =>
+    SidebarItemsList.map(item =>
+      (<SidebarItem item={item} key={item.text} collapsed={isCollapsed} />)
+    ), [isCollapsed]);
 
   return (
     <aside
@@ -42,12 +48,7 @@ export default function Sidebar(props: SidebarProps)
       </Button>
 
       <div className={classes.items}>
-        {
-          SidebarItemsList.map(item =>
-          (
-            <SidebarItem item={item} key={item.text} collapsed={isCollapsed} />
-          ))
-        }
+        {itemsList}
       </div>
 
       <div className={classes.switchers}>
@@ -57,4 +58,6 @@ export default function Sidebar(props: SidebarProps)
 
     </aside>
   );
-}
+});
+
+export default Sidebar;

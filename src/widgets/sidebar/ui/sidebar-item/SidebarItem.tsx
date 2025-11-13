@@ -5,6 +5,7 @@ import { SidebarItemType } from '../../model/items.js';
 import classes from './SidebarItem.module.scss';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { memo } from 'react';
 
 interface SidebarItemProps
 {
@@ -12,7 +13,7 @@ interface SidebarItemProps
   collapsed: boolean;
 }
 
-export default function SidebarItem(props: SidebarItemProps)
+const SidebarItem = memo(function SidebarItem(props: SidebarItemProps)
 {
   const { item, collapsed } = props;
 
@@ -30,4 +31,6 @@ export default function SidebarItem(props: SidebarItemProps)
       </span>
     </AppLink>
   );
-}
+});
+
+export default SidebarItem;

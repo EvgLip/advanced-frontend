@@ -3,6 +3,7 @@ import { EnhancedStore, Reducer, ReducersMapObject, UnknownAction } from '@redux
 import { CounterState } from '@/entities/counter';
 import { UserState } from '@/entities/user';
 import { LoginState } from '@/features/auth-by-username/model/types/loginState';
+import { ProfileState } from '@/entities/profile';
 
 export interface RootState
 {
@@ -11,6 +12,7 @@ export interface RootState
 
   // Асинхронные редюсеры
   login?: LoginState;
+  profile?: ProfileState;
 }
 
 export type RootStateKey = keyof RootState;

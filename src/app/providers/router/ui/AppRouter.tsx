@@ -5,7 +5,7 @@ import RootLayout from '@/pages/RootLayout';
 import { MainPage } from '@/pages/main-page';
 import { AboutPage } from '@/pages/about-page';
 import { ProfilePage } from '@/pages/profile-page';
-import { NotFoundPage } from '@/pages/NotFoundPage';
+import { NotFoundPage } from '@/pages/not-found-page';
 import { LoaderPage } from '@/widgets/loader-page';
 
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';

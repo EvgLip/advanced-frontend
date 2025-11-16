@@ -1,17 +1,17 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { configureStore, ReducersMapObject, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';
 import { createReducerManager } from './reducerManager';
-import { RootState } from './rootState';
-
+import { StateShema } from './stateShema';
+import { axiosApi } from '@/shared/api/api';
 
 export function createReduxStore(
-  initialState?: RootState,
-  asyncReducers?: ReducersMapObject<RootState>
+  initialState?: StateShema,
+  asyncReducers?: ReducersMapObject<StateShema>
 )
 {
-  const rootReducer: ReducersMapObject<RootState> =
+  const rootReducer: ReducersMapObject<StateShema> =
   {
     ...asyncReducers,
     counter: counterReducer,
@@ -20,14 +20,21 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<RootState>
-    (
-      {
-        reducer: reducerManager.reduce,
-        preloadedState: initialState,
-        devTools: __IS_DEV__,
-      }
-    );
+  const store = configureStore(
+    {
+      reducer: reducerManager.reduce,
+      preloadedState: initialState,
+      devTools: __IS_DEV__,
+      middleware: getDefaultMiddleware => getDefaultMiddleware(
+        {
+          thunk:
+          {
+            extraArgument: { api: axiosApi }
+          }
+        }
+      )
+    }
+  );
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
@@ -37,4 +44,9 @@ export function createReduxStore(
 }
 
 export type AppStore = ReturnType<typeof createReduxStore>;
-export type AppDispatch = AppStore['dispatch'];
+// export type AppDispatch = AppStore['dispatch'];
+export type AppDispatch = ThunkDispatch<
+  StateShema,
+  { api: typeof axiosApi; },
+  UnknownAction
+>;

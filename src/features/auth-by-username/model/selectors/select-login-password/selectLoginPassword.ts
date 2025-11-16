@@ -1,3 +1,3 @@
-import { RootState } from '@/app/providers/store-provider';
+import { StateShema } from '@/app/providers/store-provider';
 
-export const selectLoginPassword = (state: RootState) => state?.login?.password || '';
+export const selectLoginPassword = (state: StateShema) => state?.login?.password || '';

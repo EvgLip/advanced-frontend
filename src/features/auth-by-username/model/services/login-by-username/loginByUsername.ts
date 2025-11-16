@@ -2,7 +2,6 @@ import { User, userActions } from '@/entities/user';
 import i18n from '@/shared/config/i18next/i18next';
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 interface LoginByUsernameProps
 {
@@ -11,15 +10,17 @@ interface LoginByUsernameProps
 }
 const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string; }>(
   'login/loginByUsername',
-  async (authData, thunkAPI) =>
+  async (authData, { dispatch, extra, rejectWithValue }) =>
   {
     try
     {
-      const response = await axios.post<User>('http://localhost:8000/login', authData);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-expect-error;
+      const response = await extra.api.post<User>('/login', authData);
 
       if (!response.data) throw new Error();
 
-      thunkAPI.dispatch(userActions.setAuthData(response.data));
+      dispatch(userActions.setAuthData(response.data));
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
       return response.data;
 
@@ -27,7 +28,7 @@ const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectVal
     catch (error) 
     {
       console.log(error);
-      return thunkAPI.rejectWithValue(i18n.t('неверный логин или пароль'));
+      return rejectWithValue(i18n.t('неверный логин или пароль'));
     }
   },
 );

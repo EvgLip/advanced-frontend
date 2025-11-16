@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 import loginByUsername from './loginByUsername';
-// import { RootState } from '@/app/providers/store-provider';
+// import { StateShema } from '@/app/providers/store-provider';
 import { userActions } from '@/entities/user';
 
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
@@ -14,7 +14,7 @@ const userData = { username: '123', id: '1' };
 describe('loginByUsername', function ()
 {
   // let dispatch: Dispatch;
-  // let getState: () => RootState;
+  // let getState: () => StateShema;
 
   // beforeEach(() =>
   // {

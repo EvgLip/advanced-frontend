@@ -7,7 +7,10 @@ import { ThemeProvider } from '@/app/providers/theme-provider';
 import '@/shared/config/i18next/i18next';
 import { StoreProvider } from '@/app/providers/store-provider';
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('В документе отсутствует корневой элемент для Приложения. Как правлио это div с классом "root"');
+
+createRoot(rootElement).render(
   <StrictMode>
     <StoreProvider >
       <Suspense fallback="">

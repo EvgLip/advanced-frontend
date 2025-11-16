@@ -24,7 +24,7 @@ export default function AppLink(props: AppLinkProps)
 {
   const {
     to,
-    className,
+    className = '',
     children,
     theme = LinkThemeList.PRIMARY,
     ...otherProps

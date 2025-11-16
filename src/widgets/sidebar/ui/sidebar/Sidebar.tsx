@@ -19,7 +19,7 @@ interface SidebarProps
 //коментарий для проверки ci на pull request
 const Sidebar = memo(function Sidebar(props: SidebarProps)
 {
-  const { className } = props;
+  const { className = '' } = props;
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [test, setTest] = useState(0);
 

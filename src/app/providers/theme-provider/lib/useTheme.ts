@@ -4,8 +4,9 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeList } from './Theme
 interface UseThemeResult
 {
   toggleTheme: () => void;
-  theme: Theme;
+  theme?: Theme;
 }
+
 
 export default function useTheme(): UseThemeResult
 {
@@ -15,16 +16,20 @@ export default function useTheme(): UseThemeResult
   if (context === undefined)
     throw new Error('Попытка доступа к контексту Theme вне ThemeProvider');
 
-  const toggleTheme = () =>
+  const { theme, setTheme } = context;
+
+  function toggleTheme() 
   {
     const newTheme = context.theme === ThemeList.DARK ? ThemeList.LIGHT : ThemeList.DARK;
-    context.setTheme(newTheme);
+    setTheme!(newTheme);
     //сохраняем тему в localStorage
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
+
   // подменяем context.setTheme на toggleTheme
   return {
-    theme: context.theme,
+    theme,
     toggleTheme,
   };
+
 }

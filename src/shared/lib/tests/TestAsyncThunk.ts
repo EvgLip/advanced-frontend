@@ -1,5 +1,5 @@
 
-import { RootState } from '@/app/providers/store-provider';
+import { StateShema } from '@/app/providers/store-provider';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 
 type ActionCreatorType<Return, Arg, RejectedValue> =
@@ -10,7 +10,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue>
 {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dispatch: jest.MockedFn<any>;
-  getState: () => RootState;
+  getState: () => StateShema;
   actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 
   constructor(actionCreator: ActionCreatorType<Return, Arg, RejectedValue>)

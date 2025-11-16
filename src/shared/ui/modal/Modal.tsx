@@ -13,6 +13,7 @@ interface ModalProps
 }
 
 const ANIMATION_DELAY = 290;
+const modalParent = document.getElementById('modal');
 
 export default function Modal(props: ModalProps)
 {
@@ -27,7 +28,7 @@ export default function Modal(props: ModalProps)
   const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
-  const mods: Record<string, boolean> =
+  const mods: Record<string, boolean | undefined> =
   {
     [classes.opened]: isOpen,
     [classes.closing]: isClosing,
@@ -59,7 +60,7 @@ export default function Modal(props: ModalProps)
       if (isOpen) window.addEventListener('keydown', onKeyDown);
       return () => 
       {
-        clearTimeout(timerRef.current);
+        clearTimeout(timerRef.current as ReturnType<typeof setTimeout>);
         window.removeEventListener('keydown', onKeyDown);
       };
     }, [isOpen, onKeyDown]);
@@ -71,9 +72,10 @@ export default function Modal(props: ModalProps)
     }, [isOpen]);
 
   if (lazy && !isMounted) return null;
+  if (!modalParent) throw new Error('В докуметне отсутствует родительский элемент для модального окна. Как правило это div с классом "modal"');
 
   return (
-    <Portal parent={document.getElementById('modal')}>
+    <Portal parent={modalParent}>
       <div className={classNames(classes.modal, mods, [className])} >
         <div className={classes.overlay} onClick={closeHandler}>
           <div className={classes.content} onClick={contentClickHandler}>

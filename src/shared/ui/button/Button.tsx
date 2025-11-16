@@ -39,7 +39,7 @@ export default function Button(props: ButtonProps)
     children,
     appearance = ButtonTypeList.PRIMARY,
     square = false,
-    size,
+    size = ButtonSizeList.M,
     ...otherProps
   } = props;
 

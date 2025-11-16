@@ -14,7 +14,7 @@ interface NavbarProps
   className?: string;
 }
 
-const Navbar = memo(function Navbar({ className }: NavbarProps)
+const Navbar = memo(function Navbar({ className = '' }: NavbarProps)
 {
   const [isAuthOpenModal, setIsAuthOpenModal] = useState(false);
   const authData = useAppSelector(selectUserAuthData);

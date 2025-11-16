@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { RootState, StoreProvider } from '@/app/providers/store-provider';
+import { StateShema, StoreProvider } from '@/app/providers/store-provider';
 
 export interface ComponentRenderOption
 {
   route?: string;
-  initialState?: DeepPartial<RootState>;
+  initialState?: DeepPartial<StateShema>;
 }
 
 export default function ComponentRender(children: ReactNode, options: ComponentRenderOption = {})

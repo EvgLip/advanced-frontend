@@ -1,6 +1,6 @@
-import { RootState } from '@/app/providers/store-provider';
+import { StateShema } from '@/app/providers/store-provider';
 
-export default function selectUserAuthData(state: RootState)
+export default function selectUserAuthData(state: StateShema)
 {
   return state.user.authData;
 }

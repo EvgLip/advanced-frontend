@@ -5,27 +5,27 @@ import { UserState } from '@/entities/user';
 import { LoginState } from '@/features/auth-by-username/model/types/loginState';
 import { ProfileState } from '@/entities/profile';
 
-export interface RootState
+export interface StateShema
 {
   counter: CounterState;
   user: UserState;
-
   // Асинхронные редюсеры
   login?: LoginState;
   profile?: ProfileState;
 }
 
-export type RootStateKey = keyof RootState;
+//export type DynamicStateShema = StateShema | Partial<StateShema> | undefined;
+export type StateShemaKey = keyof StateShema;
 
 export interface ReducerManager 
 {
-  getReducerMap: () => ReducersMapObject<RootState>;
-  reduce: (state: RootState, action: UnknownAction) => RootState;
-  add: (key: RootStateKey, reducer: Reducer) => void;
-  remove: (key: RootStateKey) => void;
+  getReducerMap: () => ReducersMapObject<StateShema>;
+  reduce: (state: StateShema | undefined, action: UnknownAction) => StateShema;
+  add: (key: StateShemaKey, reducer: Reducer) => void;
+  remove: (key: StateShemaKey) => void;
 }
 
-export interface RootStateWithManager extends EnhancedStore<RootState>
+export interface StateShemaWithManager extends EnhancedStore<StateShema>
 {
   reducerManager: ReducerManager;
 }

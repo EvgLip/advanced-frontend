@@ -1,3 +1,3 @@
-import { RootState } from '@/app/providers/store-provider';
+import { StateShema } from '@/app/providers/store-provider';
 
-export const selectLoginLoading = (state: RootState) => state?.login?.isLoading || false;
+export const selectLoginLoading = (state: StateShema) => state?.login?.isLoading || false;

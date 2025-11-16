@@ -1,3 +1,3 @@
-import { RootState } from '@/app/providers/store-provider';
+import { StateShema } from '@/app/providers/store-provider';
 
-export const selectCounter = (state: RootState) => state.counter; 
+export const selectCounter = (state: StateShema) => state.counter; 

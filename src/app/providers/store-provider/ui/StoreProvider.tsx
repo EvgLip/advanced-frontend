@@ -2,14 +2,14 @@ import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
 import { createReduxStore } from '../config/store';
-import { RootState } from '../config/rootState';
+import { StateShema } from '../config/stateShema';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
 interface StoreProviderProps
 {
   children: ReactNode;
-  initialState?: DeepPartial<RootState>;
-  asyncReducers?: DeepPartial<ReducersMapObject<RootState>>;
+  initialState?: DeepPartial<StateShema>;
+  asyncReducers?: DeepPartial<ReducersMapObject<StateShema>>;
 }
 
 export default function StoreProvider(props: StoreProviderProps)
@@ -21,8 +21,8 @@ export default function StoreProvider(props: StoreProviderProps)
   } = props;
 
   const store = createReduxStore(
-    initialState as RootState,
-    asyncReducers as ReducersMapObject<RootState>
+    initialState as StateShema,
+    asyncReducers as ReducersMapObject<StateShema>
   );
 
   return (

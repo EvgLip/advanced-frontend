@@ -1,22 +1,22 @@
-import { RootState } from '@/app/providers/store-provider';
+import { StateShema } from '@/app/providers/store-provider';
 import { selectLoginLoading } from './selectLoginLoading';
 
 describe('selectLoginLoading', function ()
 {
   test('should return true', () =>
   {
-    const state: DeepPartial<RootState> =
+    const state: DeepPartial<StateShema> =
     {
       login: { isLoading: true }
     };
 
-    expect(selectLoginLoading(state as RootState)).toEqual(true);
+    expect(selectLoginLoading(state as StateShema)).toEqual(true);
   });
   /////////////////////////////////
   test('should return false with empty state', () =>
   {
-    const state: DeepPartial<RootState> = {};
+    const state: DeepPartial<StateShema> = {};
 
-    expect(selectLoginLoading(state as RootState)).toEqual(false);
+    expect(selectLoginLoading(state as StateShema)).toEqual(false);
   });
 });

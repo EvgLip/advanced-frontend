@@ -18,3 +18,13 @@ export const Country =
   } as const;
 
 export type CountryType = typeof Country[keyof typeof Country];
+
+export const TypeOfAlign =
+  {
+    CENTER: 'center',
+    JUSTIFY: 'justify',
+    LEFT: 'left',
+    RIGHT: 'right',
+  } as const;
+
+export type Align = typeof TypeOfAlign[keyof typeof TypeOfAlign];

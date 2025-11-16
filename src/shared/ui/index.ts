@@ -9,6 +9,7 @@ import Portal from './portal/Portal';
 import Modal from './modal/Modal';
 import Input from './input/Input';
 import Text, { TextThemeList } from './text/Text';
+import { HeadingLevel } from './heading/Heading';
 
 export
 {
@@ -23,4 +24,5 @@ export
   Input,
   Text,
   TextThemeList,
+  HeadingLevel,
 };

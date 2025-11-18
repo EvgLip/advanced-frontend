@@ -1,15 +1,16 @@
 import { configureStore, ReducersMapObject, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
-import { NavigateFunction } from 'react-router-dom';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';
 import { createReducerManager } from './reducerManager';
-import { StateShema } from './stateShema';
+import { StateShema, ThunckExtraArg } from './stateShema';
 import { axiosApi } from '@/shared/api/api';
 
 export function createReduxStore(
   initialState?: StateShema,
-  asyncReducers?: ReducersMapObject<StateShema>
+  asyncReducers?: ReducersMapObject<StateShema>,
+  navigate?: NavigateFunction 
 )
 {
   const rootReducer: ReducersMapObject<StateShema> =
@@ -21,6 +22,12 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
+  const extraArg: ThunckExtraArg = 
+  {
+    api: axiosApi,
+    navigate,
+  };
+
   const store = configureStore(
     {
       reducer: reducerManager.reduce,
@@ -28,10 +35,7 @@ export function createReduxStore(
       devTools: __IS_DEV__,
       middleware: getDefaultMiddleware => getDefaultMiddleware(
         {
-          thunk:
-          {
-            extraArgument: { api: axiosApi },
-          }
+          thunk: { extraArgument: extraArg, }
         }
       )
     }

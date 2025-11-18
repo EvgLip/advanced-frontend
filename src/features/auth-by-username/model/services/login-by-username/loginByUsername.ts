@@ -4,6 +4,7 @@ import { User, userActions } from '@/entities/user';
 import i18n from '@/shared/config/i18next/i18next';
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
 import { ThunckExtraArg } from '@/app/providers/store-provider';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface LoginByUsernameProps
 {
@@ -23,7 +24,6 @@ const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { extra: Th
       dispatch(userActions.setAuthData(response.data));
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
       return response.data;
-
     }
     catch (error) 
     {

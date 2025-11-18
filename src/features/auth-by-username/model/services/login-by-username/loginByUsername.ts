@@ -1,21 +1,21 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { User, userActions } from '@/entities/user';
 import i18n from '@/shared/config/i18next/i18next';
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunckExtraArg } from '@/app/providers/store-provider';
 
 interface LoginByUsernameProps
 {
   username: string;
   password: string;
 }
-const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string; }>(
+const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { extra: ThunckExtraArg, rejectValue: string; }>(
   'login/loginByUsername',
   async (authData, { dispatch, extra, rejectWithValue }) =>
   {
     try
     {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-expect-error;
       const response = await extra.api.post<User>('/login', authData);
 
       if (!response.data) throw new Error();

@@ -1,4 +1,4 @@
-import { memo, MouseEvent, useCallback, useEffect } from 'react';
+import { memo, MouseEvent, useCallback } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -49,10 +49,10 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps)
     }, [dispatch]
   );
 
-  const loginHandler = useCallback(function (e: MouseEvent<HTMLButtonElement>)
+  const loginHandler = useCallback(async function (e: MouseEvent<HTMLButtonElement>)
   {
     e.preventDefault();
-    dispatch(loginByUsername({ username, password }));
+    await dispatch(loginByUsername({ username, password }));
   }, [dispatch, password, username]);
 
   return (

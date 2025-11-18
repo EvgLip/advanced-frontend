@@ -20,6 +20,7 @@ export default function StoreProvider(props: StoreProviderProps)
     asyncReducers,
   } = props;
 
+
   const store = createReduxStore(
     initialState as StateShema,
     asyncReducers as ReducersMapObject<StateShema>

@@ -1,4 +1,5 @@
 import { configureStore, ReducersMapObject, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
+import { NavigateFunction } from 'react-router-dom';
 
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';
@@ -29,7 +30,7 @@ export function createReduxStore(
         {
           thunk:
           {
-            extraArgument: { api: axiosApi }
+            extraArgument: { api: axiosApi },
           }
         }
       )

@@ -4,6 +4,7 @@ import { CounterState } from '@/entities/counter';
 import { UserState } from '@/entities/user';
 import { LoginState } from '@/features/auth-by-username/model/types/loginState';
 import { ProfileState } from '@/entities/profile';
+import { AxiosInstance } from 'axios';
 
 export interface StateShema
 {
@@ -28,5 +29,10 @@ export interface ReducerManager
 export interface StateShemaWithManager extends EnhancedStore<StateShema>
 {
   reducerManager: ReducerManager;
+}
+
+export interface ThunckExtraArg
+{
+  api: AxiosInstance;
 }
 

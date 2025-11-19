@@ -32,9 +32,15 @@ export interface StateShemaWithManager extends EnhancedStore<StateShema>
   reducerManager: ReducerManager;
 }
 
-export interface ThunckExtraArg
+export interface ThunkExtraArg
 {
   api: AxiosInstance;
   navigate?: NavigateFunction;
+}
+
+export interface ThunkConfig<T>
+{
+  rejectValue: T;
+  extra: ThunkExtraArg;
 }
 

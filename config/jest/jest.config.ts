@@ -20,6 +20,7 @@ const config: Config = {
   globals:
   {
     __IS_DEV__: true,
+    __API__: '',
   },
 
   // The root directory that Jest should scan for tests and modules within

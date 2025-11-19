@@ -4,13 +4,13 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';
 import { createReducerManager } from './reducerManager';
-import { StateShema, ThunckExtraArg } from './stateShema';
+import { StateShema, ThunkExtraArg } from './stateShema';
 import { axiosApi } from '@/shared/api/api';
 
 export function createReduxStore(
   initialState?: StateShema,
   asyncReducers?: ReducersMapObject<StateShema>,
-  navigate?: NavigateFunction 
+  navigate?: NavigateFunction
 )
 {
   const rootReducer: ReducersMapObject<StateShema> =
@@ -22,7 +22,7 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const extraArg: ThunckExtraArg = 
+  const extraArg: ThunkExtraArg =
   {
     api: axiosApi,
     navigate,

@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-export function buildPlagins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[]
+export function buildPlagins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[]
 {
   const plugins =
     [
@@ -18,7 +18,8 @@ export function buildPlagins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       ),
       new webpack.DefinePlugin(
         {
-          __IS_DEV__: JSON.stringify(isDev)
+          __IS_DEV__: JSON.stringify(isDev),
+          __API__: JSON.stringify(apiUrl),
         }
       ),
     ];

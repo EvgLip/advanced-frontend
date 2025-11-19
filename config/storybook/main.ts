@@ -29,6 +29,7 @@ const config: StorybookConfig =
       new DefinePlugin(
         {
           __IS_DEV__: process.env.NODE_ENV === 'development',
+          __API__: JSON.stringify(''),
         })
     );
 

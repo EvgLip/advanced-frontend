@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const axiosApi = axios.create(
   {
-    baseURL: 'http://localhost:8000',
+    baseURL: __API__,
     headers:
     {
       authorization: localStorage.getItem(USER_LOCAL_STORAGE_KEY) || '',

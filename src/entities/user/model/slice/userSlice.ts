@@ -1,5 +1,5 @@
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
-import { createSlice, PayloadAction } from '../../../../../node_modules/@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { UserState, User } from '../type/userState';
 

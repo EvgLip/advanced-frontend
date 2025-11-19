@@ -1,8 +1,14 @@
 import StoreProvider from './ui/StoreProvider';
-import { StateShema, StateShemaWithManager, StateShemaKey } from './config/stateShema';
+import
+{
+  StateShema,
+  StateShemaWithManager,
+  StateShemaKey,
+  ThunkExtraArg,
+  ThunkConfig
+} from './config/stateShema';
 import { createReduxStore } from './config/store';
 import { useAppDispatch, useAppSelector } from './config/hooks';
-import { ThunckExtraArg } from './config/stateShema';
 
 
 export
@@ -14,5 +20,6 @@ export
   useAppSelector,
   StateShemaWithManager,
   StateShemaKey,
-  ThunckExtraArg,
+  ThunkExtraArg,
+  ThunkConfig,
 };

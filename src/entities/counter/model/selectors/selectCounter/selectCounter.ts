@@ -1,3 +1,3 @@
-import { StateShema } from '@/app/providers/store-provider';
+import { StateSchema } from '@/app/providers/store-provider';
 
-export const selectCounter = (state: StateShema) => state.counter; 
+export const selectCounter = (state: StateSchema) => state.counter; 

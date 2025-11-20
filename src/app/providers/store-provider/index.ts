@@ -1,12 +1,12 @@
 import StoreProvider from './ui/StoreProvider';
 import
 {
-  StateShema,
-  StateShemaWithManager,
-  StateShemaKey,
+  StateSchema,
+  StateSchemaWithManager,
+  StateSchemaKey,
   ThunkExtraArg,
   ThunkConfig
-} from './config/stateShema';
+} from './config/stateSchema';
 import { createReduxStore } from './config/store';
 import { useAppDispatch, useAppSelector } from './config/hooks';
 
@@ -15,11 +15,11 @@ export
 {
   StoreProvider,
   createReduxStore,
-  StateShema,
+  StateSchema,
   useAppDispatch,
   useAppSelector,
-  StateShemaWithManager,
-  StateShemaKey,
+  StateSchemaWithManager,
+  StateSchemaKey,
   ThunkExtraArg,
   ThunkConfig,
 };

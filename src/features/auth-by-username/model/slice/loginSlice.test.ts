@@ -1,6 +1,6 @@
 import { loginActions, loginReducer } from './loginSlice';
 import { LoginState } from '../types/loginState';
-import { StateShema } from '@/app/providers/store-provider';
+import { StateSchema } from '@/app/providers/store-provider';
 
 describe('loginSlice', function ()
 {

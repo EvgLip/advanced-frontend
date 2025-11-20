@@ -1,3 +1,3 @@
-import { StateShema } from '@/app/providers/store-provider';
+import { StateSchema } from '@/app/providers/store-provider';
 
-export const selectLoginPassword = (state: StateShema) => state?.login?.password || '';
+export const selectLoginPassword = (state: StateSchema) => state?.login?.password || '';

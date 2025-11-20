@@ -21,14 +21,14 @@ export default function useTheme(): UseThemeResult
   function toggleTheme() 
   {
     const newTheme = context.theme === ThemeList.DARK ? ThemeList.LIGHT : ThemeList.DARK;
-    setTheme!(newTheme);
+    setTheme?.(newTheme);
     //сохраняем тему в localStorage
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
   // подменяем context.setTheme на toggleTheme
   return {
-    theme,
+    theme: theme || ThemeList.LIGHT,
     toggleTheme,
   };
 

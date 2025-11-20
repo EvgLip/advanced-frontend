@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
 export const ButtonTypeList =
@@ -43,7 +43,7 @@ export default function Button(props: ButtonProps)
     ...otherProps
   } = props;
 
-  const mods: Record<string, boolean> =
+  const mods: Mods =
   {
     [classes[appearance]]: Boolean(appearance),
     [classes.square]: square,

@@ -7,7 +7,7 @@ import { UserState } from '@/entities/user';
 import { LoginState } from '@/features/auth-by-username/model/types/loginState';
 import { ProfileState } from '@/entities/profile';
 
-export interface StateShema
+export interface StateSchema
 {
   counter: CounterState;
   user: UserState;
@@ -16,18 +16,18 @@ export interface StateShema
   profile?: ProfileState;
 }
 
-//export type DynamicStateShema = StateShema | Partial<StateShema> | undefined;
-export type StateShemaKey = keyof StateShema;
+//export type DynamicStateSchema = StateSchema | Partial<StateSchema> | undefined;
+export type StateSchemaKey = keyof StateSchema;
 
 export interface ReducerManager 
 {
-  getReducerMap: () => ReducersMapObject<StateShema>;
-  reduce: (state: StateShema | undefined, action: UnknownAction) => StateShema;
-  add: (key: StateShemaKey, reducer: Reducer) => void;
-  remove: (key: StateShemaKey) => void;
+  getReducerMap: () => ReducersMapObject<StateSchema>;
+  reduce: (state: StateSchema | undefined, action: UnknownAction) => StateSchema;
+  add: (key: StateSchemaKey, reducer: Reducer) => void;
+  remove: (key: StateSchemaKey) => void;
 }
 
-export interface StateShemaWithManager extends EnhancedStore<StateShema>
+export interface StateSchemaWithManager extends EnhancedStore<StateSchema>
 {
   reducerManager: ReducerManager;
 }

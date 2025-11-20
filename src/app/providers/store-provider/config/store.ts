@@ -1,19 +1,19 @@
 import { configureStore, ReducersMapObject, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
-import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { NavigateFunction } from 'react-router-dom';
 
 import { counterReducer } from '@/entities/counter';
 import { userReducer } from '@/entities/user';
 import { createReducerManager } from './reducerManager';
-import { StateShema, ThunkExtraArg } from './stateShema';
+import { StateSchema, ThunkExtraArg } from './stateSchema';
 import { axiosApi } from '@/shared/api/api';
 
 export function createReduxStore(
-  initialState?: StateShema,
-  asyncReducers?: ReducersMapObject<StateShema>,
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
   navigate?: NavigateFunction
 )
 {
-  const rootReducer: ReducersMapObject<StateShema> =
+  const rootReducer: ReducersMapObject<StateSchema> =
   {
     ...asyncReducers,
     counter: counterReducer,
@@ -51,7 +51,7 @@ export function createReduxStore(
 export type AppStore = ReturnType<typeof createReduxStore>;
 // export type AppDispatch = AppStore['dispatch'];
 export type AppDispatch = ThunkDispatch<
-  StateShema,
+  StateSchema,
   { api: typeof axiosApi; },
   UnknownAction
 >;

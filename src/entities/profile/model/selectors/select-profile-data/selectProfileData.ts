@@ -1,6 +1,6 @@
-import { StateShema } from '@/app/providers/store-provider';
+import { StateSchema } from '@/app/providers/store-provider';
 
-export default function selectProfileData(state: StateShema)
+export default function selectProfileData(state: StateSchema)
 {
   return state.profile?.data;
 }

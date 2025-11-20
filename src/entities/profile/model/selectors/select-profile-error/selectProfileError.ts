@@ -1,6 +1,6 @@
-import { StateShema } from '@/app/providers/store-provider';
+import { StateSchema } from '@/app/providers/store-provider';
 
-export default function (state: StateShema)
+export default function (state: StateSchema)
 {
   return state.profile?.error;
 }

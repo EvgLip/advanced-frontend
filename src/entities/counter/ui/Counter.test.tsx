@@ -1,19 +1,18 @@
 import { screen } from '@testing-library/react';
-import Counter from './Counter';
 import ComponentRender from '@/shared/lib/tests/ComponentRender';
 import { userEvent } from 'storybook/internal/test';
+import Counter from './Counter';
 
 
 describe('test Counter',
   function ()
   {
-    test('отрисовка значения Counter',
-      function ()
-      {
-        ComponentRender(<Counter />, { initialState: { counter: { value: 10 } } });
-        expect(screen.getByTestId('value-title')).toHaveTextContent('10');
-        screen.debug();
-      });
+    test('should render counter with a value of 10', () =>
+    {
+      ComponentRender(<Counter />, { initialState: { counter: { value: 10 } } });
+      expect(screen.getByTestId('value-title')).toHaveTextContent('10');
+      screen.debug();
+    });
 
     test('increment',
       async function ()

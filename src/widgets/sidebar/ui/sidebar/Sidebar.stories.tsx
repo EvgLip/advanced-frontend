@@ -8,17 +8,7 @@ import RouterDecorator from '@/shared/config/storybook/RouterDecorator';
 const meta = {
   title: 'widgets/Sidebar',
   component: Sidebar,
-  decorators:
-    [
-      (Story) =>
-      {
-        return (
-          <RouterDecorator >
-            <Story />
-          </RouterDecorator >
-        );
-      },
-    ],
+  decorators: [],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     //layout: 'centered',

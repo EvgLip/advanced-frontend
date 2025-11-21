@@ -4,6 +4,7 @@ import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@/app/providers/theme-provider';
 import LoginForm from '@/features/auth-by-username/ui/login-form/LoginForm';
 import StoreDecorator from '@/shared/config/storybook/StoreDecorator';
+import RouterDecorator from '@/shared/config/storybook/RouterDecorator';
 
 const meta = {
   title: 'reatures/LoginForm',

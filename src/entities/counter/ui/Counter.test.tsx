@@ -18,7 +18,7 @@ describe('test Counter',
       async function ()
       {
         ComponentRender(<Counter />, { initialState: { counter: { value: 10 } } });
-        act(async () =>
+        await act(async () =>
         {
           await userEvent.click(screen.getByTestId('increment-btn'));
         });
@@ -30,7 +30,7 @@ describe('test Counter',
       async function ()
       {
         ComponentRender(<Counter />, { initialState: { counter: { value: 10 } } });
-        act(async () =>
+        await act(async () =>
         {
           await userEvent.click(screen.getByTestId('decrement-btn'));
         });

@@ -8,8 +8,8 @@ import Loader from './loader/Loader';
 import Portal from './portal/Portal';
 import Modal from './modal/Modal';
 import Input from './input/Input';
-import Text, { TextThemeList } from './text/Text';
-import { HeadingLevel } from './heading/Heading';
+import Text, { TextTheme } from './text/Text';
+import Heading, { HeadingLevel, HeadingTheme } from './heading/Heading';
 
 export
 {
@@ -23,6 +23,8 @@ export
   Modal,
   Input,
   Text,
-  TextThemeList,
+  TextTheme,
+  Heading,
   HeadingLevel,
+  HeadingTheme,
 };

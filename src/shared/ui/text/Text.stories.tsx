@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@/app/providers/theme-provider';
-import Text, { TextThemeList } from './Text';
+import Text, { TextTheme } from './Text';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -48,7 +48,7 @@ export const ErrorLight: Story = {
   args: {
     title: 'Заголовок',
     text: 'Текстовое содержание',
-    theme: TextThemeList.ERROR,
+    theme: TextTheme.ERROR,
   },
 };
 
@@ -56,7 +56,7 @@ export const ErrorDark: Story = {
   args: {
     title: 'Заголовок',
     text: 'Текстовое содержание',
-    theme: TextThemeList.ERROR,
+    theme: TextTheme.ERROR,
   },
   parameters: {
     theme: ThemeList.DARK,

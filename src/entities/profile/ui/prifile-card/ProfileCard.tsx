@@ -1,28 +1,70 @@
-import { useAppSelector } from '@/app/providers/store-provider';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Heading, HeadingLevel } from '@/shared/ui/heading/Heading';
-import { Button, ButtonType, Input } from '@/shared/ui';
+import
+{
+  Button,
+  ButtonType,
+  Input,
+  Loader,
+  Text,
+  TextTheme,
+  Heading,
+  HeadingLevel,
+  HeadingTheme,
+} from '@/shared/ui';
 
-import selectProfileData from '../../model/selectors/select-profile-data/selectProfileData';
-import selectProfileIsLoading from '../../model/selectors/select-profile-isLoading/selectProfileIsLoading';
-import selectProfileError from '../../model/selectors/select-profile-error/selectProfileError';
 import classes from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
+import { TypeOfAlign } from '@/shared/const/common';
 
 
 interface ProfileCardProps
 {
   className?: string;
+  data?: Profile;
+  isLoading?: boolean;
+  error?: string;
 }
 
 export default function ProfileCard(props: ProfileCardProps)
 {
-  const { className } = props;
+  const {
+    className,
+    data,
+    isLoading,
+    error,
+  } = props;
   const { t } = useTranslation('profile-card');
-  const data = useAppSelector(selectProfileData);
-  const isLoading = useAppSelector(selectProfileIsLoading);
-  const error = useAppSelector(selectProfileError);
+
+  if (isLoading)
+  {
+    return (
+      <article className={classNames(classes.profilecard, { [classes.loading]: true }, [className])}>
+        <Loader />
+      </article>
+    );
+  }
+
+  if (error)
+  {
+    return (
+      <article className={classNames(classes.profilecard, {}, [className, classes.error])}>
+        <Heading
+          As={HeadingLevel.H3}
+          theme={HeadingTheme.ERROR}
+          textAlign={TypeOfAlign.CENTER}
+        >
+          {t('Произошла ошибка при загрузке профиля')}
+        </Heading>
+        <Text
+          theme={TextTheme.ERROR}
+          textAlign={TypeOfAlign.CENTER}
+          text={t('Попробуйте обновить страницу')}
+        />
+      </article>
+    );
+  }
 
   return (
     <article className={classNames(classes.profilecard, {}, [className])}>

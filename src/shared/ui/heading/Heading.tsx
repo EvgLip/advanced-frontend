@@ -16,27 +16,37 @@ export const HeadingLevel =
 
 type HeadingAs = typeof HeadingLevel[(keyof typeof HeadingLevel)];
 
+export const HeadingTheme =
+  {
+    PRIMARY: 'primary',
+    ERROR: 'error'
+  } as const;
+
+type HeadingThemeType = typeof HeadingTheme[keyof typeof HeadingTheme];
+
 interface HeadingProps
 {
   children: ReactNode;
   As?: Extract<keyof JSX.IntrinsicElements, HeadingAs>;
   textAlign?: Align;
   className?: string;
+  theme?: HeadingThemeType;
 }
 ///////////////////////////
-export function Heading(props: HeadingProps)
+export default function Heading(props: HeadingProps)
 {
   const {
     children,
     As = HeadingLevel.H1,
     textAlign = TypeOfAlign.LEFT,
+    theme = HeadingTheme.PRIMARY,
     className,
     ...other
   } = props;
 
   return (
     <As
-      className={classNames(classes[textAlign], {}, [className])}
+      className={classNames(classes[textAlign], {}, [className, classes[theme]])}
       {...other}
     >
       {children}

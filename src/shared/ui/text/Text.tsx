@@ -1,21 +1,23 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import classes from './Text.module.scss';
 import { memo } from 'react';
+import { Align } from '@/shared/const/common';
 
-export const TextThemeList =
+export const TextTheme =
   {
     PRIMARY: 'primary',
     ERROR: 'error'
   } as const;
 
-type TextTheme = (typeof TextThemeList)[keyof typeof TextThemeList];
+type TextThemeType = (typeof TextTheme)[keyof typeof TextTheme];
 
 interface TextProps
 {
   className?: string;
   title?: string;
   text?: string;
-  theme?: TextTheme;
+  theme?: TextThemeType;
+  textAlign?: Align;
 }
 
 const Text = memo(function Text(props: TextProps)
@@ -24,7 +26,7 @@ const Text = memo(function Text(props: TextProps)
     className,
     title,
     text,
-    theme = TextThemeList.PRIMARY,
+    theme = TextTheme.PRIMARY,
   } = props;
 
   return (

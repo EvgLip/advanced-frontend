@@ -2,7 +2,7 @@ import { memo, MouseEvent, useCallback } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, Input, Text, TextThemeList } from '@/shared/ui';
+import { Button, Input, Text, TextTheme } from '@/shared/ui';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store-provider';
 
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
@@ -78,7 +78,7 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps)
           {error &&
             <Text
               text={error}
-              theme={TextThemeList.ERROR}
+              theme={TextTheme.ERROR}
             />
           }
           <Button

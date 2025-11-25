@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonType } from '@/shared/ui';
+import { Button, ButtonAppearance } from '@/shared/ui';
 import classes from './LanguageSwitcher.module.scss';
 import { memo } from 'react';
 
@@ -21,7 +21,7 @@ const LanguageSwitcher = memo(function LanguageSwitcher(props: LanguageSwitcherP
     // <button>Bnt</button>
     <Button
       className={classNames(classes.languageswitcher, {}, [className])}
-      appearance={ButtonType.CLEAR}
+      appearance={ButtonAppearance.CLEAR}
       onClick={toggle}
     >
 

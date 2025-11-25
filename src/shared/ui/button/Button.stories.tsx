@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@/app/providers/theme-provider';
-import { Button, ButtonSize, ButtonType } from '@/shared/ui';
+import { Button, ButtonSize, ButtonAppearance } from '@/shared/ui';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,7 +29,7 @@ const meta = {
   argTypes: {
     appearance:
     {
-      options: [ButtonType.PRIMARY, ButtonType.OUTLINE, ButtonType.CLEAR, ButtonType.BACKGROUND_INVERTED, ButtonType.BACKGROUND],
+      options: [ButtonAppearance.PRIMARY, ButtonAppearance.OUTLINE, ButtonAppearance.CLEAR, ButtonAppearance.BACKGROUND_INVERTED, ButtonAppearance.BACKGROUND],
       control: { type: 'radio' }
     }
   },
@@ -50,21 +50,21 @@ export const Primary: Story = {
 export const Clear: Story = {
   args: {
     children: 'Clear',
-    appearance: ButtonType.CLEAR,
+    appearance: ButtonAppearance.CLEAR,
   },
 };
 
 export const Outline: Story = {
   args: {
     children: 'Outline',
-    appearance: ButtonType.OUTLINE,
+    appearance: ButtonAppearance.OUTLINE,
   },
 };
 
 export const OutlineM: Story = {
   args: {
     children: 'Outline',
-    appearance: ButtonType.OUTLINE,
+    appearance: ButtonAppearance.OUTLINE,
     size: ButtonSize.M,
   },
 };
@@ -72,7 +72,7 @@ export const OutlineM: Story = {
 export const OutlineL: Story = {
   args: {
     children: 'Outline',
-    appearance: ButtonType.OUTLINE,
+    appearance: ButtonAppearance.OUTLINE,
     size: ButtonSize.L,
   },
 };
@@ -80,7 +80,7 @@ export const OutlineL: Story = {
 export const OutlineXL: Story = {
   args: {
     children: 'Outline',
-    appearance: ButtonType.OUTLINE,
+    appearance: ButtonAppearance.OUTLINE,
     size: ButtonSize.XL,
   },
 };
@@ -88,7 +88,7 @@ export const OutlineXL: Story = {
 export const OutlineDark: Story = {
   args: {
     children: 'Outline',
-    appearance: ButtonType.OUTLINE,
+    appearance: ButtonAppearance.OUTLINE,
   },
   parameters:
   {
@@ -99,21 +99,21 @@ export const OutlineDark: Story = {
 export const BackgroundAppearanse: Story = {
   args: {
     children: 'Background',
-    appearance: ButtonType.BACKGROUND,
+    appearance: ButtonAppearance.BACKGROUND,
   },
 };
 
 export const BackgroundInvertedAppearanse: Story = {
   args: {
     children: 'Background Inverted',
-    appearance: ButtonType.BACKGROUND_INVERTED,
+    appearance: ButtonAppearance.BACKGROUND_INVERTED,
   },
 };
 
 export const Square: Story = {
   args: {
     children: '>',
-    appearance: ButtonType.BACKGROUND_INVERTED,
+    appearance: ButtonAppearance.BACKGROUND_INVERTED,
     square: true,
   },
 };
@@ -121,7 +121,7 @@ export const Square: Story = {
 export const SquareM: Story = {
   args: {
     children: '>',
-    appearance: ButtonType.BACKGROUND_INVERTED,
+    appearance: ButtonAppearance.BACKGROUND_INVERTED,
     square: true,
     size: ButtonSize.M,
   },
@@ -130,7 +130,7 @@ export const SquareM: Story = {
 export const SquareL: Story = {
   args: {
     children: '>',
-    appearance: ButtonType.BACKGROUND_INVERTED,
+    appearance: ButtonAppearance.BACKGROUND_INVERTED,
     square: true,
     size: ButtonSize.L,
   },
@@ -139,7 +139,7 @@ export const SquareL: Story = {
 export const SquareXL: Story = {
   args: {
     children: '<',
-    appearance: ButtonType.BACKGROUND_INVERTED,
+    appearance: ButtonAppearance.BACKGROUND_INVERTED,
     square: true,
     size: ButtonSize.XL,
   },
@@ -148,7 +148,7 @@ export const SquareXL: Story = {
 export const Disabled: Story = {
   args: {
     children: 'Disabled',
-    appearance: ButtonType.OUTLINE,
+    appearance: ButtonAppearance.OUTLINE,
   },
   parameters:
   {

@@ -2,7 +2,7 @@ import { memo, useEffect, useState } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonType } from '@/shared/ui';
+import { Button, ButtonAppearance } from '@/shared/ui';
 
 import styles from './Navbar.module.scss';
 import { LoginModal } from '@/features/auth-by-username';
@@ -36,7 +36,7 @@ const Navbar = memo(function Navbar({ className = '' }: NavbarProps)
     <>
       <Button
         className={styles.links}
-        appearance={ButtonType.CLEAR}
+        appearance={ButtonAppearance.CLEAR}
         onClick={openModalLoginHandler}
       >
         {t('войти')}
@@ -55,7 +55,7 @@ const Navbar = memo(function Navbar({ className = '' }: NavbarProps)
     <>
       <Button
         className={styles.links}
-        appearance={ButtonType.CLEAR}
+        appearance={ButtonAppearance.CLEAR}
         onClick={logoutHandler}
       >
         {t('выйти')}

@@ -3,7 +3,7 @@ import { memo, useMemo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ThemeSwitcher } from '@/widgets/theme-switcher';
 import { LanguageSwitcher } from '@/widgets/language-switcher';
-import Button, { ButtonTypeList } from '@/shared/ui/button/Button';
+import Button, { ButtonAppearance } from '@/shared/ui/button/Button';
 import { ButtonSize } from '@/shared/ui';
 
 import { SidebarItemsList } from '../../model/items';
@@ -42,7 +42,7 @@ const Sidebar = memo(function Sidebar(props: SidebarProps)
         size={ButtonSize.XL}
         data-testid='sidebar-toggle'
         onClick={onToggle}
-        appearance={ButtonTypeList.BACKGROUND_INVERTED}
+        appearance={ButtonAppearance.BACKGROUND_INVERTED}
       >
         {isCollapsed ? '>' : '<'}
       </Button>

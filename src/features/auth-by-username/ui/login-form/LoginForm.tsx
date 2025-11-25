@@ -66,12 +66,14 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps)
           autofocus
           onChange={onChangeUsername}
           value={username}
+          readonly={false}
         />
 
         <Input
           placeholder={t('пароль')}
           onChange={onChangePassword}
           value={password}
+          readonly={false}
         />
 
         <div className={classes.controls}>

@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import
 {
-  Button,
-  ButtonType,
   Input,
   Loader,
   Text,
@@ -25,6 +23,11 @@ interface ProfileCardProps
   data?: Profile;
   isLoading?: boolean;
   error?: string;
+  readonly?: boolean;
+  onChangeFirstname: (value?: string) => void;
+  onChangeLastname: (value?: string) => void;
+  onChangeAge: (value?: string) => void;
+  onChangeCity: (value?: string) => void;
 }
 
 export default function ProfileCard(props: ProfileCardProps)
@@ -34,6 +37,11 @@ export default function ProfileCard(props: ProfileCardProps)
     data,
     isLoading,
     error,
+    readonly,
+    onChangeFirstname,
+    onChangeLastname,
+    onChangeAge,
+    onChangeCity,
   } = props;
   const { t } = useTranslation('profile-card');
 
@@ -68,20 +76,53 @@ export default function ProfileCard(props: ProfileCardProps)
 
   return (
     <article className={classNames(classes.profilecard, {}, [className])}>
-      <div className={classes.header}>
-        <Heading As={HeadingLevel.H3}>{t('Профиль')}</Heading>
-        <Button appearance={ButtonType.OUTLINE}>{t('Редактировать')}</Button>
-      </div>
-      <div className={classes.data}>
+
+      <div >
         <Input
-          value={data?.firstname}
-          placeholder={t('Ваше имя')}
+          placeholder={t(' Имя')}
           className={classes.input}
+          value={data?.firstname}
+          onChange={onChangeFirstname}
+          readonly={readonly}
         />
         <Input
-          value={data?.lastname}
-          placeholder={t('Ваша фамилия')}
+          placeholder={t('Фамилия')}
           className={classes.input}
+          value={data?.lastname}
+          onChange={onChangeLastname}
+          readonly={readonly}
+        />
+        <Input
+          placeholder={t('Возраст')}
+          className={classes.input}
+          value={data?.age?.toString()}
+          onChange={onChangeAge}
+          readonly={readonly}
+        />
+        <Input
+          placeholder={t('Город')}
+          className={classes.input}
+          value={data?.city}
+          onChange={onChangeCity}
+          readonly={readonly}
+        />
+        <Input
+          placeholder={t('Страна')}
+          className={classes.input}
+          value={data?.country}
+          readonly={readonly}
+        />
+        <Input
+          placeholder={t('Валюта')}
+          className={classes.input}
+          value={data?.currency}
+          readonly={readonly}
+        />
+        <Input
+          placeholder={t('Роль')}
+          className={classes.input}
+          value={data?.username}
+          readonly={readonly}
         />
       </div>
     </article>

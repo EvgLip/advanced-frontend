@@ -1,6 +1,6 @@
 import { useTheme, ThemeList } from '@/app/providers/theme-provider';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonType } from '@/shared/ui';
+import { Button, ButtonAppearance } from '@/shared/ui';
 import DarkIcon from '@/shared/assets/icons/dark-icon.svg';
 import LightIcon from '@/shared/assets/icons/light-icon.svg';
 import { memo } from 'react';
@@ -18,7 +18,7 @@ const ThemeSwitcher = memo(function ThemeSwitcher(props: ThemeSwitcherProps)
   return (
     <Button
       className={classNames('', {}, [className])}
-      appearance={ButtonType.CLEAR}
+      appearance={ButtonAppearance.CLEAR}
       onClick={toggleTheme}
     >
       {theme === ThemeList.DARK

@@ -3,32 +3,33 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import classes from './Button.module.scss';
 
-export const ButtonTypeList =
+export const ButtonAppearance =
   {
     PRIMARY: 'primary',
     CLEAR: 'clear',
     OUTLINE: 'outline',
+    OUTLINE_RED: 'outlineRed',
     BACKGROUND: 'background',
     BACKGROUND_INVERTED: 'backgroundinverted'
   } as const;
 
-type ButtonType = (typeof ButtonTypeList)[keyof typeof ButtonTypeList];
+type ButtonAppearance = (typeof ButtonAppearance)[keyof typeof ButtonAppearance];
 
-export const ButtonSizeList =
+export const ButtonSize =
   {
     M: 'sizem',
     L: 'sizel',
     XL: 'sizexl',
   } as const;
 
-type ButtonSize = (typeof ButtonSizeList)[keyof typeof ButtonSizeList];
+type ButtonSizeType = (typeof ButtonSize)[keyof typeof ButtonSize];
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 {
   className?: string;
-  appearance?: ButtonType;
+  appearance?: ButtonAppearance;
   square?: boolean;
-  size?: ButtonSize;
+  size?: ButtonSizeType;
   children: ReactNode;
 }
 
@@ -37,9 +38,9 @@ export default function Button(props: ButtonProps)
   const {
     className,
     children,
-    appearance = ButtonTypeList.PRIMARY,
+    appearance = ButtonAppearance.PRIMARY,
     square = false,
-    size = ButtonSizeList.M,
+    size = ButtonSize.M,
     ...otherProps
   } = props;
 

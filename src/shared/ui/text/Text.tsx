@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import classes from './Text.module.scss';
 import { memo } from 'react';
-import { Align } from '@/shared/const/common';
+import { Align, TypeOfAlign } from '@/shared/const/common';
 
 export const TextTheme =
   {
@@ -27,10 +27,11 @@ const Text = memo(function Text(props: TextProps)
     title,
     text,
     theme = TextTheme.PRIMARY,
+    textAlign = TypeOfAlign.LEFT
   } = props;
 
   return (
-    <div className={classNames('', {}, [className, classes[theme]])}>
+    <div className={classNames('', {}, [className, classes[theme], classes[textAlign]])}>
       {title && <p className={classes.title}>{title}</p>}
       {text && <p className={classes.text}>{text}</p>}
     </div>

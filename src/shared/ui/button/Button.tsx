@@ -8,7 +8,7 @@ export const ButtonAppearance =
     PRIMARY: 'primary',
     CLEAR: 'clear',
     OUTLINE: 'outline',
-    OUTLINE_RED: 'outlineRed',
+    OUTLINE_RED: 'outline-red',
     BACKGROUND: 'background',
     BACKGROUND_INVERTED: 'backgroundinverted'
   } as const;

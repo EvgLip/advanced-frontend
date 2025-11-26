@@ -20,7 +20,7 @@ const LanguageSwitcher = memo(function LanguageSwitcher(props: LanguageSwitcherP
   return (
     // <button>Bnt</button>
     <Button
-      className={classNames(classes.languageswitcher, {}, [className])}
+      className={classNames(classes['language-switcher'], {}, [className])}
       appearance={ButtonAppearance.CLEAR}
       onClick={toggle}
     >

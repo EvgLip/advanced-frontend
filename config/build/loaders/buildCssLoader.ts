@@ -18,6 +18,7 @@ export default function buildCssLoaders(isDev: boolean)
               auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
               //отключает именованный экспорт
               namedExport: false,
+              exportLocalsConvention: "as-is",
               //для css-модулей генерируем классы по шаблону в зависимости от isDev
               localIdentName: isDev
                 ? '[path][name]__[local]--[hash:base64:5]'

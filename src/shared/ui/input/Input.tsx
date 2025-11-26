@@ -61,14 +61,14 @@ const Input = memo(function Input(props: InputProps)
   };
 
   return (
-    <div className={classNames(classes.inputwrapper, {}, [className])}>
+    <div className={classNames(classes['input-wrapper'], {}, [className])}>
       {placeholder && (
         <div className={classes.placeholder}>
           {`${placeholder} >`}
         </div>
       )}
 
-      <div className={classes.caretwrapper}>
+      <div className={classes['caret-wrapper']}>
         <input
           ref={ref}
           className={classNames(classes.input, mods)}

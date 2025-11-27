@@ -66,6 +66,18 @@ export default function ProfilePage(props: ProfilePageProps)
       dispatch(profileActions.updateProfile({ city: value || '' }));
     }, [dispatch]);
 
+  const onChangeUsername = useCallback(
+    function (value?: string)
+    {
+      dispatch(profileActions.updateProfile({ username: value || '' }));
+    }, [dispatch]);
+
+  const onChangeAvatar = useCallback(
+    function (value?: string)
+    {
+      dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    }, [dispatch]);
+
   return (
 
     <DinamicModuleLoader reducers={initialReducer} removeAfterUnmount>
@@ -79,6 +91,8 @@ export default function ProfilePage(props: ProfilePageProps)
           onChangeLastname={onChangeLastname}
           onChangeAge={onChangeAge}
           onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
           readonly={readonly}
         />
       </div>

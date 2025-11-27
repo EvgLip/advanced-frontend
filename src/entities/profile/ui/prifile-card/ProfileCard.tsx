@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import
 {
   Input,
@@ -10,11 +10,12 @@ import
   Heading,
   HeadingLevel,
   HeadingTheme,
+  Avatar,
 } from '@/shared/ui';
 
-import classes from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 import { TypeOfAlign } from '@/shared/const/common';
+import classes from './ProfileCard.module.scss';
 
 
 interface ProfileCardProps
@@ -24,10 +25,12 @@ interface ProfileCardProps
   isLoading?: boolean;
   error?: string;
   readonly?: boolean;
-  onChangeFirstname: (value?: string) => void;
-  onChangeLastname: (value?: string) => void;
-  onChangeAge: (value?: string) => void;
-  onChangeCity: (value?: string) => void;
+  onChangeFirstname?: (value?: string) => void;
+  onChangeLastname?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  onChangeAvatar?: (value?: string) => void;
 }
 
 export default function ProfileCard(props: ProfileCardProps)
@@ -42,8 +45,15 @@ export default function ProfileCard(props: ProfileCardProps)
     onChangeLastname,
     onChangeAge,
     onChangeCity,
+    onChangeUsername,
+    onChangeAvatar,
   } = props;
   const { t } = useTranslation('profile-card');
+
+  const mod: Mods =
+  {
+    [classes.editing]: !readonly,
+  };
 
   if (isLoading)
   {
@@ -75,9 +85,12 @@ export default function ProfileCard(props: ProfileCardProps)
   }
 
   return (
-    <article className={classNames(classes.profilecard, {}, [className])}>
+    <article className={classNames(classes.profilecard, mod, [className])}>
 
       <div >
+        <div className={classes['avatar-wrapper']}>
+          {data?.avatar && <Avatar src={data.avatar} size={100} alt='Аватарка' />}
+        </div>
         <Input
           placeholder={t(' Имя')}
           className={classes.input}
@@ -119,9 +132,17 @@ export default function ProfileCard(props: ProfileCardProps)
           readonly={readonly}
         />
         <Input
-          placeholder={t('Роль')}
+          placeholder={t('Введите имя пользователя')}
           className={classes.input}
           value={data?.username}
+          onChange={onChangeUsername}
+          readonly={readonly}
+        />
+        <Input
+          placeholder={t('Введите ссылку на аватар')}
+          className={classes.input}
+          value={data?.avatar}
+          onChange={onChangeAvatar}
           readonly={readonly}
         />
       </div>

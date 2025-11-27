@@ -10,6 +10,8 @@ import Modal from './modal/Modal';
 import Input from './input/Input';
 import Text, { TextTheme } from './text/Text';
 import Heading, { HeadingLevel, HeadingTheme } from './heading/Heading';
+import Avatar from './avatar/Avatar';
+import Select from './select/Select';
 
 export
 {
@@ -27,4 +29,6 @@ export
   Heading,
   HeadingLevel,
   HeadingTheme,
+  Avatar,
+  Select,
 };

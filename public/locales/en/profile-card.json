@@ -1,5 +1,7 @@
 {
   "Профиль": "Profile",
   "Произошла ошибка при загрузке профиля": "An error occurred when uploading the profile",
-  "Попробуйте обновить страницу": "Try refreshing the page"
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Введите имя пользователя": "Enter the user's name",
+  "Введите ссылку на аватар": "Enter the link to the avatar"
 }

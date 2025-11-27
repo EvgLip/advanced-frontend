@@ -13,7 +13,7 @@ export const ButtonAppearance =
     BACKGROUND_INVERTED: 'backgroundinverted'
   } as const;
 
-type ButtonAppearance = (typeof ButtonAppearance)[keyof typeof ButtonAppearance];
+type ButtonAppearanceType = (typeof ButtonAppearance)[keyof typeof ButtonAppearance];
 
 export const ButtonSize =
   {
@@ -27,7 +27,7 @@ type ButtonSizeType = (typeof ButtonSize)[keyof typeof ButtonSize];
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
 {
   className?: string;
-  appearance?: ButtonAppearance;
+  appearance?: ButtonAppearanceType;
   square?: boolean;
   size?: ButtonSizeType;
   children: ReactNode;

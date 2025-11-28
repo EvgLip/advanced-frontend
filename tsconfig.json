@@ -32,7 +32,7 @@
   ],
 
   // "extends": "./tsconfig.json",
-  "files": ["./src/app/types/global.d.ts"],
+  "files": ["./src/app/types/global.d.ts",],
 
   "ts-node": {
     "compilerOptions": {

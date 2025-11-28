@@ -32,11 +32,7 @@ const Select = memo(function Select(props: SelectProps)
 
   const mods: Mods = {};
 
-  function onChangeHandler(e: ChangeEvent<HTMLSelectElement>)
-  {
-    if (onChange)
-      onChange(e.target.value);
-  };
+  const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => onChange?.(e.target.value);
 
   const optionList = useMemo(() =>
   {
@@ -44,7 +40,7 @@ const Select = memo(function Select(props: SelectProps)
       options?.map(opt =>
       (
         <option
-          key={opt.content}
+          key={opt.value}
           className={classes.option}
           value={opt.value}
         >

@@ -11,11 +11,13 @@ import
   HeadingLevel,
   HeadingTheme,
   Avatar,
+  Select,
 } from '@/shared/ui';
-
-import { Profile } from '../../model/types/profile';
 import { TypeOfAlign } from '@/shared/const/common';
+import { CurrencySelector } from '@/entities/currency/ui/CurrencySelector';
+
 import classes from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
 
 
 interface ProfileCardProps
@@ -87,65 +89,58 @@ export default function ProfileCard(props: ProfileCardProps)
   return (
     <article className={classNames(classes.profilecard, mod, [className])}>
 
-      <div >
-        <div className={classes['avatar-wrapper']}>
-          {data?.avatar && <Avatar src={data.avatar} size={100} alt='Аватарка' />}
-        </div>
-        <Input
-          placeholder={t(' Имя')}
-          className={classes.input}
-          value={data?.firstname}
-          onChange={onChangeFirstname}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Фамилия')}
-          className={classes.input}
-          value={data?.lastname}
-          onChange={onChangeLastname}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Возраст')}
-          className={classes.input}
-          value={data?.age?.toString()}
-          onChange={onChangeAge}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Город')}
-          className={classes.input}
-          value={data?.city}
-          onChange={onChangeCity}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Страна')}
-          className={classes.input}
-          value={data?.country}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Валюта')}
-          className={classes.input}
-          value={data?.currency}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Введите имя пользователя')}
-          className={classes.input}
-          value={data?.username}
-          onChange={onChangeUsername}
-          readonly={readonly}
-        />
-        <Input
-          placeholder={t('Введите ссылку на аватар')}
-          className={classes.input}
-          value={data?.avatar}
-          onChange={onChangeAvatar}
-          readonly={readonly}
-        />
+      <div className={classes['avatar-wrapper']}>
+        {data?.avatar && <Avatar src={data.avatar} size={100} alt='Аватарка' />}
       </div>
+      <Input
+        placeholder={t(' Имя')}
+        className={classes.input}
+        value={data?.firstname}
+        onChange={onChangeFirstname}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('Фамилия')}
+        className={classes.input}
+        value={data?.lastname}
+        onChange={onChangeLastname}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('Возраст')}
+        className={classes.input}
+        value={data?.age?.toString()}
+        onChange={onChangeAge}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('Город')}
+        className={classes.input}
+        value={data?.city}
+        onChange={onChangeCity}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('Страна')}
+        className={classes.input}
+        value={data?.country}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('Введите имя пользователя')}
+        className={classes.input}
+        value={data?.username}
+        onChange={onChangeUsername}
+        readonly={readonly}
+      />
+      <Input
+        placeholder={t('Введите ссылку на аватар')}
+        className={classes.input}
+        value={data?.avatar}
+        onChange={onChangeAvatar}
+        readonly={readonly}
+      />
+      <CurrencySelector className={classes.input} />
     </article>
   );
 }

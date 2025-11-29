@@ -13,8 +13,9 @@ import
   Avatar,
   Select,
 } from '@/shared/ui';
-import { TypeOfAlign } from '@/shared/const/common';
+import { CountryType, TypeOfAlign } from '@/shared/const/common';
 import { CurrencySelector } from '@/entities/currency/ui/CurrencySelector';
+import { CurrencyType } from '@/entities/currency';
 
 import classes from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
@@ -33,6 +34,8 @@ interface ProfileCardProps
   onChangeCity?: (value?: string) => void;
   onChangeUsername?: (value?: string) => void;
   onChangeAvatar?: (value?: string) => void;
+  onChangeCurrency?: (value?: CurrencyType) => void;
+  onChangeCountry?: (value?: CountryType) => void;
 }
 
 export default function ProfileCard(props: ProfileCardProps)
@@ -49,6 +52,7 @@ export default function ProfileCard(props: ProfileCardProps)
     onChangeCity,
     onChangeUsername,
     onChangeAvatar,
+    onChangeCurrency
   } = props;
   const { t } = useTranslation('profile-card');
 
@@ -140,7 +144,12 @@ export default function ProfileCard(props: ProfileCardProps)
         onChange={onChangeAvatar}
         readonly={readonly}
       />
-      <CurrencySelector className={classes.input} />
+      <CurrencySelector
+        className={classes.input}
+        value={data?.currency}
+        onChange={onChangeCurrency}
+        readonly={readonly}
+      />
     </article>
   );
 }

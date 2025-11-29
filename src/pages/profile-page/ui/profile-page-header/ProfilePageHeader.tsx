@@ -8,7 +8,7 @@ import { profileActions, selectProfileReadonly, updateProfileData } from '@/enti
 
 export default function ProfilePageHeader()
 {
-  const { t } = useTranslation('profile');
+  const { t } = useTranslation('profile-page');
   const readonly = useAppSelector(selectProfileReadonly);
   const dispatch = useAppDispatch();
 

@@ -3,5 +3,10 @@
   "Произошла ошибка при загрузке профиля": "An error occurred when uploading the profile",
   "Попробуйте обновить страницу": "Try refreshing the page",
   "Введите имя пользователя": "Enter the user's name",
-  "Введите ссылку на аватар": "Enter the link to the avatar"
+  "Имя": "Name",
+  "Фамилия": "Surname",
+  "Возраст": "Age",
+  "Город": "City",
+  "Имя пользователя": "Username",
+  "Ссылка на аватар": "Link to the avatar"
 }

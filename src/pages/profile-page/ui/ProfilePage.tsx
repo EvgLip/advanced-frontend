@@ -17,6 +17,7 @@ import ProfileCard from '@/entities/profile/ui/prifile-card/ProfileCard';
 import { useAppDispatch, useAppSelector } from '@/app/providers/store-provider';
 import ProfilePageHeader from './profile-page-header/ProfilePageHeader';
 import { CurrencyType } from '@/entities/currency';
+import { CountryType } from '@/entities/country';
 
 const initialReducer: ReducerList =
 {
@@ -78,10 +79,17 @@ export default function ProfilePage(props: ProfilePageProps)
     {
       dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
+
   const onChangeCurrency = useCallback(
     function (value?: CurrencyType)
     {
       dispatch(profileActions.updateProfile({ currency: value || undefined }));
+    }, [dispatch]);
+
+  const onChangeCountry = useCallback(
+    function (value?: CountryType)
+    {
+      dispatch(profileActions.updateProfile({ country: value || undefined }));
     }, [dispatch]);
 
   return (
@@ -100,6 +108,7 @@ export default function ProfilePage(props: ProfilePageProps)
           onChangeUsername={onChangeUsername}
           onChangeAvatar={onChangeAvatar}
           onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
           readonly={readonly}
         />
       </div>

@@ -13,9 +13,10 @@ import
   Avatar,
   Select,
 } from '@/shared/ui';
-import { CountryType, TypeOfAlign } from '@/shared/const/common';
+import { TypeOfAlign } from '@/shared/const/common';
 import { CurrencySelector } from '@/entities/currency/ui/CurrencySelector';
 import { CurrencyType } from '@/entities/currency';
+import { CountrySelector, CountryType } from '@/entities/country';
 
 import classes from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
@@ -52,7 +53,8 @@ export default function ProfileCard(props: ProfileCardProps)
     onChangeCity,
     onChangeUsername,
     onChangeAvatar,
-    onChangeCurrency
+    onChangeCurrency,
+    onChangeCountry,
   } = props;
   const { t } = useTranslation('profile-card');
 
@@ -97,7 +99,7 @@ export default function ProfileCard(props: ProfileCardProps)
         {data?.avatar && <Avatar src={data.avatar} size={100} alt='Аватарка' />}
       </div>
       <Input
-        placeholder={t(' Имя')}
+        placeholder={t('Имя')}
         className={classes.input}
         value={data?.firstname}
         onChange={onChangeFirstname}
@@ -124,21 +126,21 @@ export default function ProfileCard(props: ProfileCardProps)
         onChange={onChangeCity}
         readonly={readonly}
       />
-      <Input
-        placeholder={t('Страна')}
+      <CountrySelector
         className={classes.input}
         value={data?.country}
+        onChange={onChangeCountry}
         readonly={readonly}
       />
       <Input
-        placeholder={t('Введите имя пользователя')}
+        placeholder={t('Имя пользователя')}
         className={classes.input}
         value={data?.username}
         onChange={onChangeUsername}
         readonly={readonly}
       />
       <Input
-        placeholder={t('Введите ссылку на аватар')}
+        placeholder={t('Ссылка на аватар')}
         className={classes.input}
         value={data?.avatar}
         onChange={onChangeAvatar}

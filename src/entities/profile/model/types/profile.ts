@@ -1,4 +1,4 @@
-import { CountryType } from '@/shared/const/common';
+import { CountryType } from '@/entities/country';
 import { CurrencyType } from '@/entities/currency';
 
 export interface Profile

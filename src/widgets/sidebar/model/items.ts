@@ -31,4 +31,4 @@ export const SidebarItemsList: SidebarItemType[] =
       text: 'Профиль',
       authOnly: true,
     },
-  ] as const;
+  ];

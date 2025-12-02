@@ -2,5 +2,9 @@
   "Профиль": "Profile Page",
   "Редактировать": "Edit",
   "Сохранить": "Save",
-  "Отменить": "Cancel"
+  "Отменить": "Cancel",
+  "Серверная ошибка": "Server error when saving",
+  "Данные не указаны": "The data is not specified",
+  "Имя и фамилия": "First and last name are required",
+  "Некорректный возраст": "Incorrect age"
 }

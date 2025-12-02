@@ -20,7 +20,7 @@ const SidebarItem = memo(function SidebarItem(props: SidebarItemProps)
 {
   const { item, collapsed } = props;
 
-  const { t } = useTranslation('translation');
+  const { t } = useTranslation('sidebar');
   const isAuth = useAppSelector(selectUserAuthData);
 
   if (item.authOnly && !isAuth) return null;

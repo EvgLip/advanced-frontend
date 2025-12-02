@@ -1,4 +1,4 @@
-import { Profile } from './profile';
+import { Profile, ValidateProfileErrorType } from './profile';
 
 export interface ProfileState
 {
@@ -6,5 +6,6 @@ export interface ProfileState
   formData?: Profile;
   isLoading: boolean;
   error?: string;
+  validateErrors?: ValidateProfileErrorType[];
   readonly: boolean;
 }

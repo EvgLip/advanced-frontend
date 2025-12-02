@@ -9,6 +9,8 @@ import selectProfileFormData from './model/selectors/select-profile-form-data/se
 import selectProfileIsLoading from './model/selectors/select-profile-isLoading/selectProfileIsLoading';
 import selectProfileError from './model/selectors/select-profile-error/selectProfileError';
 import selectProfileReadonly from './model/selectors/select-profile-readonly/selectProfileReadonly';
+import selectProfileValidateErrors from './model/selectors/select-profile-validate-errors/selectProfileValidateErrors';
+import { validateProfileData } from './model/services/validateProfileData/validateProfileData';
 
 
 export
@@ -25,4 +27,6 @@ export
   selectProfileIsLoading,
   selectProfileError,
   selectProfileReadonly,
+  validateProfileData,
+  selectProfileValidateErrors,
 };

@@ -6,9 +6,10 @@ import { AboutPage } from '@/pages/about-page';
 import { ProfilePage } from '@/pages/profile-page';
 import { NotFoundPage } from '@/pages/not-found-page';
 import { LoaderPage } from '@/widgets/loader-page';
-
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import ProviderTree from '@/app/ProviderTree';
+
+import ProtectedRoute from './ProtectedRoute';
 
 
 export const router = createBrowserRouter(
@@ -33,15 +34,21 @@ export const router = createBrowserRouter(
               </Suspense>
           },
           {
-            path: RoutePath.profile, //'/profile',
-            element:
-              <Suspense fallback={<LoaderPage />}>
-                <ProfilePage />
-              </Suspense>
+            element: <ProtectedRoute />,
+            children:
+              [
+                {
+                  path: RoutePath.profile, //'/profile',
+                  element:
+                    <Suspense fallback={<LoaderPage />}>
+                      <ProfilePage />
+                    </Suspense>
+                },
+              ]
           },
           {
             path: '*',
-            element: <NotFoundPage />
+            element: <NotFoundPage />,
             // element: <LoaderPage />
 
           }

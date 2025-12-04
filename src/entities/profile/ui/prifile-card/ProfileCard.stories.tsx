@@ -2,14 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import ThemeDecorator from '@/shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '@/app/providers/theme-provider';
+import avatar from '@/shared/assets/tests/storybook.jpg';
 
-import { CountrySelector } from './CountrySelector';
-import { Countries } from '../model/types/country';
-
+import ProfileCard from './ProfileCard';
 
 const meta = {
-  title: 'entities/CountrySelector',
-  component: CountrySelector,
+  title: 'entities/ProfileCard',
+  component: ProfileCard,
   decorators: [
     (Story) =>
     {
@@ -25,11 +24,22 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof CountrySelector>;
+} satisfies Meta<typeof ProfileCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    data: {
+      firstname: 'Evg',
+      lastname: 'Lip',
+      age: 30,
+      city: 'Lipetsk',
+      username: 'admin',
+      avatar,
+      currency: 'RUB',
+      country: 'Russia',
+    },
+  }
 };

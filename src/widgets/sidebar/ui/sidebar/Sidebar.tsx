@@ -21,7 +21,6 @@ const Sidebar = memo(function Sidebar(props: SidebarProps)
 {
   const { className = '' } = props;
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [test, setTest] = useState(0);
 
   const onToggle = () => setIsCollapsed(prev => !prev);
 

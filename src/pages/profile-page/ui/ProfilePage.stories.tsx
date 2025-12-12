@@ -11,11 +11,11 @@ const initialState =
   profile: {
     formData: {
       username: 'admin',
-      age: 22,
+      age: 58,
       country: Countries.Russia,
-      lastname: 'ulbi tv',
-      firstname: 'asd',
-      city: 'asf',
+      lastname: 'lastname',
+      firstname: 'firstname',
+      city: 'city',
       currency: Currency.RUB,
     },
   },

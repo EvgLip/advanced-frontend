@@ -16,7 +16,7 @@ const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>
     catch (error)
     {
       console.log(error);
-      return rejectWithValue('во время получения данный возникла ошибка');
+      return rejectWithValue('Во время получения данных возникла ошибка');
     }
   });
 

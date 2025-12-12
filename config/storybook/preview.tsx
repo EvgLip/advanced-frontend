@@ -4,6 +4,7 @@ import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 import RouterDecorator from '../../src/shared/config/storybook/RouterDecorator';
 import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator';
 import { ThemeList } from '../../src/app/providers/theme-provider';
+import TranslateDecorator from '../../src/shared/config/storybook/TranslateDecorator';
 
 
 const preview: Preview =
@@ -51,7 +52,18 @@ const preview: Preview =
           </ThemeDecorator>
         );
       },
+
+      (Story) =>
+      {
+        return (
+          <TranslateDecorator>
+            <Story />
+          </TranslateDecorator>
+        );
+      },
     ],
 };
 
 export default preview;
+
+

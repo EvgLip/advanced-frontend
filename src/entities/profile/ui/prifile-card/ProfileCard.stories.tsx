@@ -43,3 +43,15 @@ export const Primary: Story = {
     },
   }
 };
+
+export const WithError: Story = {
+  args: {
+    error: 'Здесь сообщение об ошибке',
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+  },
+};

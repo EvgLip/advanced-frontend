@@ -4,8 +4,10 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-export function buildPlagins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[]
+export function buildPlagins(options: BuildOptions): webpack.WebpackPluginInstance[]
 {
+  const { paths, isDev, apiUrl, project } = options;
+
   const plugins =
     [
       new HtmlWebpackPlugin({ template: paths.html }),
@@ -20,6 +22,7 @@ export function buildPlagins({ paths, isDev, apiUrl }: BuildOptions): webpack.We
         {
           __IS_DEV__: JSON.stringify(isDev),
           __API__: JSON.stringify(apiUrl),
+          __PROJECT__: JSON.stringify(project),
         }
       ),
     ];

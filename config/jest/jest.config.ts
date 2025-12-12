@@ -21,6 +21,7 @@ const config: Config = {
   {
     __IS_DEV__: true,
     __API__: '',
+    __PROJECT__: JSON.stringify('jest'),
   },
 
   // The root directory that Jest should scan for tests and modules within

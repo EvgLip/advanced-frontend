@@ -30,6 +30,7 @@ const config: StorybookConfig =
         {
           __IS_DEV__: process.env.NODE_ENV === 'development',
           __API__: JSON.stringify(''),
+          __PROJECT__: JSON.stringify('storybook'),
         })
     );
 

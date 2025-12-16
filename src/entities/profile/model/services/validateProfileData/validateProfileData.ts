@@ -16,7 +16,7 @@ export function validateProfileData(profile?: Profile)
   if (!firstname || firstname.trim() === '' || !lastname || lastname.trim() === '')
     errors.push(ValidateProfileError.INCORRECT_USER_DATA);
 
-  if (!age || !Number.isInteger(age))
+  if (!age || !Number.isInteger(age) || Number(age) <= 0)
     errors.push(ValidateProfileError.INCORRECT_AGE);
 
   return errors;
